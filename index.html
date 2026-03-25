@@ -274,6 +274,17 @@
       .services-head  { flex-direction: column; align-items: flex-start; }
       .proj-grid      { grid-template-columns: 1fr; }
       .form-row       { grid-template-columns: 1fr; }
+
+      /* Hero — layout 1 colonne */
+      .hero-row       { grid-template-columns: 1fr; gap: 1rem; }
+      .hero-body h1   { margin-bottom: 0; }
+
+      /* Stats strip — 2 colonnes au lieu de 4 */
+      .hero-stats     { grid-template-columns: repeat(2, 1fr); }
+
+      /* Éléments décoratifs inutiles sur mobile */
+      .scroll-hint    { display: none; }
+      .hero-location  { display: none; }
     }
 
     /* ════════════════════════════════

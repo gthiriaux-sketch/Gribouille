@@ -244,6 +244,21 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 0 2rem; }
     box-shadow: -4px 0 24px rgba(18,2,30,.08);
   }
   .footer-nav { flex-direction: column; gap: 2rem; }
+
+  /* Réduction du logo nav */
+  .nav-logo img { height: 56px; }
+
+  /* Réduction du logo footer */
+  .footer-logo-img { height: 100px; }
+
+  /* Page hero — padding réduit */
+  .page-hero { padding-top: 100px; padding-bottom: 3rem; }
+
+  /* CTA strip — padding réduit */
+  .cta-strip { padding: 3.5rem 0; }
+
+  /* Curseur custom inutile sur tactile */
+  .c-dot, .c-ring { display: none; }
 }
 
 /* Icônes PNG pour les services */
