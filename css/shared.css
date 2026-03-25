@@ -214,7 +214,7 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 0 2rem; }
   padding-bottom: 3rem; border-bottom: 1px solid rgba(255,254,240,.14);
   gap: 3rem; flex-wrap: wrap;
 }
-.footer-logo-img { height: 148px; width: auto; margin-bottom: .9rem; }
+.footer-logo-img { height: 148px; width: fit-content; margin-bottom: .9rem; }
 .footer-brand p  { font-size: .85rem; font-weight: 300; opacity: .5; max-width: 270px; margin-top: .9rem; }
 .footer-nav { display: flex; gap: 4rem; flex-wrap: wrap; align-items: flex-start; }
 .fnc h4 {
@@ -242,14 +242,15 @@ footer { background: var(--ink); color: var(--bg); padding: 4rem 0 2rem; }
     background: var(--bg); padding: 5rem 2.5rem 2rem;
     border-left: 2px solid var(--ink); gap: 2rem;
     box-shadow: -4px 0 24px rgba(18,2,30,.08);
+    z-index: 200;
   }
   .footer-nav { flex-direction: column; gap: 2rem; }
 
-  /* Réduction du logo nav */
-  .nav-logo img { height: 56px; }
+  /* Logo masqué sur mobile */
+  .nav-logo img { display: none; }
 
-  /* Réduction du logo footer */
-  .footer-logo-img { height: 100px; }
+  /* Logo footer masqué sur mobile */
+  .footer-logo-img { display: none; }
 
   /* Page hero — padding réduit */
   .page-hero { padding-top: 100px; padding-bottom: 3rem; }

@@ -281,10 +281,21 @@
 
       /* Stats strip — 2 colonnes au lieu de 4 */
       .hero-stats     { grid-template-columns: repeat(2, 1fr); }
+      /* Supprimer le border-right sur les cellules en fin de ligne (2e et 4e) */
+      .hero-stats .hstat:nth-child(2n) { border-right: none; }
+      /* Réduire le padding des stats sur mobile */
+      .hstat          { padding: 1.4rem 1rem; }
 
       /* Éléments décoratifs inutiles sur mobile */
       .scroll-hint    { display: none; }
       .hero-location  { display: none; }
+
+      /* Masquer les images about sur mobile (positionnement absolu pas adapté) */
+      .about-imgs     { display: none; }
+
+      /* Réduire les paddings de sections sur mobile */
+      #about, #services, #projects, #process { padding: 4rem 0; }
+      #contact        { padding: 5rem 0; }
     }
 
     /* ════════════════════════════════
