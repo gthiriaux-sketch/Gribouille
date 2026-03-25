@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À Propos — Gribouille Event Lab | Studio de Scénographie Bruxelles</title>
+  <meta name="description" content="Découvrez l'histoire de Gribouille Event Lab — studio créatif bruxellois spécialisé en scénographie immersive et installations techniques pour festivals et clubs." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Rough.js -->
+  <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.min.js"></script>
+
+  <!-- ★ Styles partagés -->
+  <link rel="stylesheet" href="css/shared.css" />
+
+  <style>
+    /* ════════════════════════════════
+       PAGE HERO
+    ════════════════════════════════ */
+    /* Mot fantôme décoratif en arrière-plan */
+    .page-hero::before {
+      content: 'US';
+      position: absolute; bottom: -2rem; right: -1rem;
+      font-family: var(--f-head); font-weight: 900;
+      font-size: clamp(10rem, 22vw, 22rem);
+      color: rgba(18,2,30,.032); line-height: 1;
+      pointer-events: none; user-select: none; letter-spacing: -.04em;
+    }
+
+    .hero-split { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; }
+    .hero-split h1 { font-family: var(--f-head); font-weight: 900; font-size: clamp(3rem, 6vw, 6rem); line-height: .92; letter-spacing: -.03em; }
+    .hero-split h1 em { font-style: italic; color: var(--accent); }
+
+    .hero-manifesto { padding-left: 2rem; border-left: 3px solid var(--accent); }
+    .hero-manifesto blockquote { font-family: var(--f-body); font-size: clamp(1.1rem, 1.8vw, 1.35rem); font-weight: 300; font-style: italic; line-height: 1.55; opacity: .82; margin-bottom: 1.5rem; }
+    .hero-manifesto cite { font-style: normal; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; opacity: .45; }
+
+    /* ════════════════════════════════
+       STORY
+    ════════════════════════════════ */
+    #story {
+      padding: 8rem 0;
+      background: var(--ink); color: var(--bg);
+      position: relative; overflow: hidden;
+    }
+    #story::after {
+      content: 'STORY';
+      position: absolute; top: 50%; left: -1rem; transform: translateY(-50%);
+      font-family: var(--f-head); font-weight: 900;
+      font-size: clamp(8rem, 18vw, 20rem);
+      color: rgba(255,254,240,.03); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+    #story .label { color: var(--accent); }
+
+    .story-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: start; }
+    .story-sticky { position: sticky; top: 120px; }
+    .story-sticky h2 { font-family: var(--f-head); font-weight: 900; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.0; margin-bottom: 1.5rem; }
+    .story-sticky h2 .hl { position: relative; display: inline-block; }
+    .story-sticky h2 .hl::after { content: ''; position: absolute; bottom: 2px; left: 0; width: 100%; height: 6px; background: var(--accent); z-index: -1; }
+    .story-sticky p { font-weight: 300; font-size: .95rem; opacity: .6; line-height: 1.7; margin-bottom: .9rem; }
+
+    .story-images { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .story-img { object-fit: cover; border: 2px solid rgba(255,254,240,.18); }
+    .story-img:nth-child(1) { aspect-ratio: 3/4; transform: rotate(-1.5deg); }
+    .story-img:nth-child(2) { aspect-ratio: 4/5; transform: rotate(1.8deg); margin-top: 3rem; }
+    .story-img:nth-child(3) { grid-column: 1/-1; aspect-ratio: 16/7; transform: rotate(-.6deg); }
+
+    /* ════════════════════════════════
+       VALUES
+    ════════════════════════════════ */
+    #values { padding: 8rem 0; }
+    #values h2 { font-family: var(--f-head); font-weight: 900; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; margin-bottom: 5rem; }
+
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1.5px solid var(--ink); }
+    .value-card { padding: 3rem 2.5rem; border-right: 1.5px solid var(--ink); position: relative; overflow: hidden; transition: background .25s; }
+    .value-card:last-child { border-right: none; }
+    .value-card:hover { background: var(--accent); }
+    .value-n { font-family: var(--f-head); font-weight: 900; font-size: 5rem; line-height: 1; color: rgba(18,2,30,.06); position: absolute; top: .5rem; right: 1rem; transition: color .25s; }
+    .value-card:hover .value-n { color: rgba(18,2,30,.12); }
+    .value-icon { width: 44px; height: 44px; margin-bottom: 1.5rem; stroke: var(--ink); fill: none; stroke-width: 1.8; }
+    .value-card h3 { font-family: var(--f-head); font-weight: 900; font-size: 1.3rem; margin-bottom: .75rem; }
+    .value-card p  { font-size: .88rem; font-weight: 300; opacity: .72; line-height: 1.6; }
+
+    /* ════════════════════════════════
+       TIMELINE
+    ════════════════════════════════ */
+    #timeline { padding: 8rem 0; }
+    #timeline h2 { font-family: var(--f-head); font-weight: 900; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; margin-bottom: 5rem; }
+
+    .tl-list { position: relative; }
+    .tl-list::before {
+      content: ''; position: absolute; top: 0; bottom: 0; left: 2.5rem; width: 2px;
+      background: repeating-linear-gradient(to bottom, var(--ink) 0, var(--ink) 8px, transparent 8px, transparent 18px);
+    }
+    .tl-item { display: grid; grid-template-columns: 5rem 1fr; gap: 2.5rem; align-items: start; padding-bottom: 4rem; position: relative; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-year { font-family: var(--f-head); font-weight: 900; font-size: .82rem; letter-spacing: .1em; text-align: center; padding-top: .15rem; position: relative; z-index: 1; left: 30px; top: 4px; }
+    .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2.5px solid var(--ink); position: absolute; left: calc(2.5rem - 6px); top: 10px; z-index: 1; transition: background .25s, border-color .25s; }
+    .tl-item:hover .tl-dot { background: var(--accent); border-color: var(--accent); }
+    .tl-content h3 { font-family: var(--f-head); font-weight: 900; font-size: 1.1rem; margin-bottom: .5rem; }
+    .tl-content p  { font-size: .88rem; font-weight: 300; opacity: .68; line-height: 1.6; }
+    .tl-content .tl-tag { display: inline-block; font-family: var(--f-head); font-weight: 800; font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; padding: .22rem .65rem; border: 1.5px solid var(--accent); color: var(--accent-dk); margin-bottom: .5rem; }
+
+    /* ════════════════════════════════
+       STATS BAND
+    ════════════════════════════════ */
+    .stats-band { background: var(--ink); color: var(--bg); padding: 5rem 0; }
+    .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,254,240,.1); border: 1px solid rgba(255,254,240,.1); }
+    .stat-cell { padding: 2.5rem 2rem; background: var(--ink); text-align: center; transition: background .25s; }
+    .stat-cell:hover { background: #1f0335; }
+    .stat-big  { font-family: var(--f-head); font-weight: 900; font-size: clamp(3rem, 5vw, 4.5rem); color: var(--accent); line-height: 1; margin-bottom: .4rem; }
+    .stat-small { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; opacity: .4; }
+
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero-split   { grid-template-columns: 1fr; gap: 3rem; }
+      .story-grid   { grid-template-columns: 1fr; gap: 3rem; }
+      .story-sticky { position: static; }
+      .values-grid  { grid-template-columns: 1fr 1fr; }
+      .value-card:nth-child(2) { border-right: none; }
+      .value-card:nth-child(3) { border-right: none; border-top: 1.5px solid var(--ink); grid-column: 1/-1; }
+      .stats-inner  { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .value-card  { border-right: none !important; border-bottom: 1.5px solid var(--ink); }
+      .value-card:last-child { border-bottom: none; }
+      .tl-list::before { left: 1.5rem; }
+      .tl-item     { grid-template-columns: 4rem 1fr; }
+      .tl-dot      { left: calc(1.5rem - 6px); }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-root"></div>
+
+  <!-- ══════════════════════════════════════
+       PAGE HERO
+       → Modifier le titre h1 et la citation manifesto
+  ═══════════════════════════════════════ -->
+  <section class="page-hero">
+    <canvas id="page-canvas"></canvas>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="label">Qui Nous Sommes</p>
+      <div class="hero-split">
+
+        <h1 class="reveal-left">
+          On Dessine.<br>
+          On <em>Fabrique.</em><br>
+          On Crée.
+        </h1>
+
+        <div class="hero-manifesto reveal-right">
+          <!--
+            → Modifier cette citation / texte manifesto.
+            Garder court — 2 à 4 phrases max.
+          -->
+          <blockquote>
+            "Chaque grand événement commence pareil : une page blanche et un esprit qui bouillonne. On transforme ces premiers gribouillis en espaces qui font lever la tête, ouvrir les yeux, et ne jamais oublier."
+          </blockquote>
+          <cite>— Le Manifeste Gribouille</cite>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       STORY / ORIGINE
+       → Modifier les blocs de texte.
+       → Ajouter/supprimer des images (IDs Pexels)
+  ═══════════════════════════════════════ -->
+  <section id="story">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="story-grid">
+
+        <div class="story-sticky reveal-left">
+          <p class="label">Notre Origine</p>
+          <h2>Né d'un <span class="hl">Gribouilli.</span></h2>
+          <p>Gribouille Event Lab est né à Bruxelles d'une conviction simple : les meilleurs espaces sont ceux qui semblent impossibles jusqu'au moment où ils existent enfin.</p>
+          <p>Notre nom vient de là — ce gribouilli fébrile griffonné sur une serviette à 2h du matin. Ce chaos-là, c'est notre terrain de jeu. On prend le croquis et on le rend réel.</p>
+          <p>On est des techniciens qui rêvent, et des rêveurs qui savent souder. Cette combinaison rare, c'est ce qui nous distingue — du premier trait de crayon au dernier câble en place.</p>
+          <p>Basés à Bruxelles, on collabore à travers la Belgique et l'Europe, avec la même obsession du détail pour une nuit de club de 400 personnes que pour la main stage d'un festival de 40 000.</p>
+          <br>
+          <a href="projects.html" class="btn btn--accent">Voir Nos Réalisations</a>
+        </div>
+
+        <!-- → Remplacer les IDs Pexels pour les photos de story -->
+        <div class="story-images reveal-right">
+          <img class="story-img"
+            src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Installation de scène en cours" loading="lazy" />
+          <img class="story-img"
+            src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Équipe qui installe les lumières sur une scène de festival" loading="lazy" />
+          <img class="story-img"
+            src="https://images.pexels.com/photos/2747446/pexels-photo-2747446.jpeg?auto=compress&cs=tinysrgb&w=900"
+            alt="Foule de festival sous une installation immersive" loading="lazy" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VALEURS
+       → Modifier titre et description de chaque value-card
+       → Ajouter/supprimer des cartes selon le nombre de valeurs
+  ═══════════════════════════════════════ -->
+  <section id="values">
+    <div class="container">
+      <p class="label">Ce Qui Nous Anime</p>
+      <h2 class="reveal">Trois Principes.<br>Chaque Projet.</h2>
+
+      <div class="values-grid reveal">
+
+        <div class="value-card">
+          <span class="value-n">01</span>
+          <!-- → Modifier le SVG pour correspondre à votre valeur -->
+          <img src="img/cube.png" class="svc-icon" alt="icon">
+          <h3>L'Artisanat Avant Tout</h3>
+          <p>On croit au fait-main avant le fait-à-l'échelle. Chaque surface, chaque soudure, chaque détail est pensé — parce que le public ressent la qualité même quand il ne peut pas la nommer.</p>
+        </div>
+
+        <div class="value-card">
+          <span class="value-n">02</span>
+          <img src="img/cube.png" class="svc-icon" alt="icon">
+          <h3>L'Idée Sans Limite</h3>
+          <p>Aucun concept n'est trop ambitieux. On part de votre vision la plus folle et on remonte l'ingénierie, le budget, la logistique jusqu'à ce que ça devienne réel. "C'est impossible" — c'est notre point de départ préféré.</p>
+        </div>
+
+        <div class="value-card">
+          <span class="value-n">03</span>
+          <img src="img/cube.png" class="svc-icon" alt="icon">
+          <h3>Construit pour Durer</h3>
+          <p>Les expériences immersives vivent dans la mémoire longtemps après que les lumières s'éteignent. On conçoit en pensant au voyage émotionnel du public — des structures et des atmosphères qui semblent inévitables, pas assemblées.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       TIMELINE / JALONS
+       → Ajouter des blocs .tl-item pour de nouveaux jalons.
+       → Copier la structure et modifier : tl-year, tl-tag, h3, p.
+  ═══════════════════════════════════════ 
+  <section id="timeline">
+    <div class="container">
+      <p class="label">Our Story in Time</p>
+      <h2 class="reveal">Milestones.</h2>
+
+      <div class="tl-list reveal">
+
+        JALON 01
+        <div class="tl-item">
+          <div class="tl-year">2022</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-tag">Founded</span>
+            <h3>Gribouille Event Lab Opens</h3>
+            <p>Founded in Brussels with a borrowed welding mask, a sketchbook, and a belief that event scenography deserved more ambition. First workshop set up in the commune of Anderlecht.</p>
+          </div>
+        </div>
+
+        JALON 02
+        <div class="tl-item">
+          <div class="tl-year">2023</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-tag">First Festival</span>
+            <h3>Couleur Café — Side Stage</h3>
+            <p>Awarded our first major festival commission: full scenic design and build for a secondary stage at Couleur Café, Brussels. 2,200 capacity. Three all-nighters. Zero regrets.</p>
+          </div>
+        </div>
+
+         JALON 03
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-tag">Expansion</span>
+            <h3>Permanent Installations &amp; Clubs</h3>
+            <p>Expanded into permanent venue installations — bar and club fit-outs, custom architectural lighting, and identity-led spatial design. First commission outside Belgium.</p>
+          </div>
+        </div>
+
+         JALON 04
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-tag">Growth</span>
+            <h3>Team Grows to 5 — New Workshop</h3>
+            <p>Moved to a larger workshop space in Forest, Brussels. Added dedicated video mapping and lighting design capability. Portfolio spans three countries.</p>
+          </div>
+        </div>
+
+         JALON 05 — 
+        <div class="tl-item">
+          <div class="tl-year">2026</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-tag">Now</span>
+            <h3>Onward</h3>
+            <p>Currently booking festival season 2026 and taking on selected club and private commissions. Always a few gribouilles on the drawing table.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+-->
+  <!-- ══════════════════════════════════════
+       STATS BAND
+       → Modifier les chiffres stat-big et les labels stat-small
+  ═══════════════════════════════════════ 
+  <div class="stats-band">
+    <div class="container">
+      <div class="stats-inner reveal">
+        <div class="stat-cell">
+          <div class="stat-big">20+</div>
+          <div class="stat-small">Projects Delivered</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-big">3</div>
+          <div class="stat-small">Countries</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-big">40K</div>
+          <div class="stat-small">Max Audience Reached</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-big">4</div>
+          <div class="stat-small">Years Creating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Créons Quelque<br>Chose Ensemble.</h2>
+      <p>Amenez-nous votre idée la plus folle. On apporte le masque de soudure et le carnet de croquis.</p>
+      <a href="contact.html" class="btn">Nous Contacter</a>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <!-- ★ Scripts partagés -->
+  <script src="js/components.js"></script>
+  <script src="js/shared.js"></script>
+
+</body>
+</html>
