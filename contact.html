@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Gribouille Event Lab | Parlez-nous de votre projet</title>
+  <meta name="description" content="Parlons de votre projet. Remplissez notre brief en ligne et recevez une réponse personnalisée de notre studio de scénographie basé à Bruxelles." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Rough.js -->
+  <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.min.js"></script>
+
+  <!-- ★ Styles partagés -->
+  <link rel="stylesheet" href="css/shared.css" />
+
+  <style>
+    /* ════════════════════════════════
+       PAGE HERO
+    ════════════════════════════════ */
+    .page-hero::before {
+      content: 'BRIEF';
+      position: absolute; bottom: -2rem; right: -1rem;
+      font-family: var(--f-head); font-weight: 900;
+      font-size: clamp(8rem, 20vw, 20rem);
+      color: rgba(18,2,30,.03); line-height: 1;
+      pointer-events: none; user-select: none; letter-spacing: -.04em;
+    }
+
+    .hero-split { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; }
+    .hero-split h1 {
+      font-family: var(--f-head); font-weight: 900;
+      font-size: clamp(3rem, 6vw, 6rem);
+      line-height: .92; letter-spacing: -.03em;
+    }
+    .hero-split h1 em { font-style: italic; color: var(--accent); }
+
+    .hero-aside { padding-left: 2rem; border-left: 3px solid var(--accent); }
+    .hero-aside p {
+      font-family: var(--f-body); font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 300; line-height: 1.6; opacity: .78; margin-bottom: 1.5rem;
+    }
+    .hero-meta { display: flex; flex-direction: column; gap: .5rem; }
+    .hero-meta-item {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .82rem; font-weight: 400; opacity: .58;
+    }
+    .hero-meta-item strong { opacity: 1; color: var(--ink); font-weight: 700; }
+
+    /* ════════════════════════════════
+       SECTION CONTACT PRINCIPALE
+    ════════════════════════════════ */
+    #contact-main { padding: 7rem 0; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 7rem;
+      align-items: start;
+    }
+
+    /* ── Panneau gauche — infos ── */
+    .contact-info { position: sticky; top: 120px; }
+
+    .contact-info-title {
+      font-family: var(--f-head); font-weight: 900;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      line-height: 1.1; margin-bottom: 1.8rem;
+    }
+    .contact-info-title em { font-style: italic; color: var(--accent); }
+
+    .contact-info-body {
+      font-size: .95rem; font-weight: 300; line-height: 1.7;
+      opacity: .75; margin-bottom: 2.5rem; max-width: 340px;
+    }
+
+    .contact-channels { display: flex; flex-direction: column; gap: 1.4rem; margin-bottom: 2.5rem; }
+
+    .contact-channel {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .channel-icon {
+      width: 38px; height: 38px; border: 1.5px solid rgba(18,2,30,.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1rem;
+    }
+    .channel-info { display: flex; flex-direction: column; gap: .1rem; }
+    .channel-label {
+      font-family: var(--f-head); font-weight: 800;
+      font-size: .62rem; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .channel-value { font-size: .9rem; font-weight: 400; color: var(--ink); }
+    .channel-value a { color: var(--ink); transition: color .3s; }
+    .channel-value a:hover { color: var(--accent); }
+    .channel-sub { font-size: .78rem; opacity: .48; }
+
+    .contact-dispo {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 2rem;
+    }
+    .contact-dispo p {
+      font-size: .84rem; font-weight: 400; line-height: 1.55; opacity: .72;
+    }
+    .contact-dispo p strong { opacity: 1; color: var(--ink); font-weight: 700; }
+
+    .contact-promise { display: flex; flex-direction: column; gap: .7rem; }
+    .promise-item {
+      display: flex; align-items: flex-start; gap: .65rem;
+      font-size: .84rem; line-height: 1.5; opacity: .65;
+    }
+    .promise-bullet {
+      width: 18px; height: 18px; background: var(--accent);
+      border-radius: 50%; flex-shrink: 0; margin-top: .15rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; font-weight: 900; color: var(--ink);
+    }
+
+    /* ── Formulaire ── */
+    .contact-form-wrap {}
+
+    .form-section-title {
+      font-family: var(--f-head); font-weight: 900;
+      font-size: 1.1rem; letter-spacing: -.01em;
+      margin-bottom: 1.6rem; margin-top: 2.8rem;
+      padding-bottom: .6rem;
+      border-bottom: 1.5px solid rgba(18,2,30,.12);
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .form-section-title:first-child { margin-top: 0; }
+    .section-num {
+      width: 28px; height: 28px;
+      border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--f-head); font-weight: 900;
+      font-size: .78rem; color: var(--accent); flex-shrink: 0;
+    }
+
+    .form     { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; }
+
+    .fg { display: flex; flex-direction: column; gap: .35rem; }
+    .fg label {
+      font-family: var(--f-head); font-weight: 800;
+      font-size: .62rem; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--ink);
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .fg label .req { color: var(--accent); font-size: .7rem; }
+    .fg label .opt {
+      font-family: var(--f-body); font-weight: 400;
+      font-size: .58rem; letter-spacing: .1em;
+      color: rgba(18,2,30,.38); text-transform: uppercase;
+    }
+
+    .fg input, .fg textarea, .fg select {
+      font-family: var(--f-body); font-size: .95rem;
+      background: transparent; border: none;
+      border-bottom: 2px solid rgba(18,2,30,.2);
+      padding: .6rem 0; color: var(--ink);
+      outline: none; transition: border-color .3s;
+      appearance: none; width: 100%;
+    }
+    .fg input:focus, .fg textarea:focus, .fg select:focus {
+      border-bottom-color: var(--accent);
+    }
+    .fg input::placeholder, .fg textarea::placeholder { opacity: .35; }
+    .fg textarea { resize: vertical; min-height: 120px; }
+    .fg select { cursor: pointer; padding-right: 1.5rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(18,2,30,.4)'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .2rem center; }
+    .fg-hint { font-size: .72rem; opacity: .42; margin-top: -.1rem; font-style: italic; }
+
+    /* Checkboxes services */
+    .checkboxes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .65rem .8rem;
+      margin-top: .2rem;
+    }
+    .cb-item { display: flex; align-items: center; gap: .55rem; cursor: pointer; }
+    .cb-item input[type="checkbox"] { display: none; }
+    .cb-box {
+      width: 18px; height: 18px; flex-shrink: 0;
+      border: 2px solid rgba(18,2,30,.3);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .2s, background .2s;
+    }
+    .cb-item input[type="checkbox"]:checked + .cb-box {
+      background: var(--accent); border-color: var(--accent);
+    }
+    .cb-item input[type="checkbox"]:checked + .cb-box::after {
+      content: '✓'; font-size: .65rem; font-weight: 900; color: var(--ink);
+    }
+    .cb-label { font-size: .88rem; font-weight: 400; line-height: 1.3; }
+
+    /* Radios délai / rencontre */
+    .radios-inline { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-top: .2rem; }
+    .rb-item { display: flex; align-items: center; gap: .5rem; cursor: pointer; }
+    .rb-item input[type="radio"] { display: none; }
+    .rb-dot {
+      width: 18px; height: 18px; flex-shrink: 0;
+      border: 2px solid rgba(18,2,30,.3); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .2s;
+    }
+    .rb-item input[type="radio"]:checked + .rb-dot {
+      border-color: var(--accent);
+    }
+    .rb-item input[type="radio"]:checked + .rb-dot::after {
+      content: ''; width: 8px; height: 8px;
+      background: var(--accent); border-radius: 50%;
+    }
+    .rb-label { font-size: .88rem; font-weight: 400; }
+
+    /* Budget curseur visuel */
+    .budget-visual {
+      display: flex; gap: 4px; margin-top: .5rem;
+    }
+    .budget-bar {
+      height: 4px; flex: 1; background: rgba(18,2,30,.1);
+      transition: background .3s;
+    }
+    .budget-bar.active { background: var(--accent); }
+
+    /* ── Jauge budget section 4 ── */
+    .budget-gauge-wrap { margin-top: .3rem; }
+    .budget-value-display {
+      font-family: var(--f-head); font-weight: 900;
+      font-size: 1.15rem; color: var(--accent);
+      text-align: center; margin-bottom: .6rem;
+      min-height: 1.5rem; letter-spacing: -.01em;
+      transition: opacity .2s;
+    }
+    .budget-gauge-track {
+      position: relative;
+      padding: 1rem 0 2.6rem;
+    }
+    .budget-segs {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      left: 0; right: 0;
+      display: flex; gap: 3px;
+      pointer-events: none;
+    }
+    .budget-seg {
+      height: 5px; flex: 1;
+      background: rgba(18,2,30,.1);
+      transition: background .25s;
+    }
+    .budget-seg.filled { background: var(--accent); }
+    .budget-range {
+      width: 100%; -webkit-appearance: none; appearance: none;
+      height: 5px; background: transparent;
+      outline: none; cursor: pointer;
+      position: relative; z-index: 2;
+    }
+    .budget-range::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--accent); border: 3px solid var(--ink);
+      cursor: pointer; transition: transform .18s;
+    }
+    .budget-range::-webkit-slider-thumb:hover { transform: scale(1.25); }
+    .budget-range::-moz-range-thumb {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--accent); border: 3px solid var(--ink);
+      cursor: pointer;
+    }
+    .budget-ticks {
+      display: flex; justify-content: space-between;
+      margin-top: .25rem;
+    }
+    .budget-tick {
+      font-size: .56rem; font-weight: 400; opacity: .35;
+      text-align: center; max-width: 52px; line-height: 1.3;
+      transition: opacity .2s, color .2s; user-select: none;
+    }
+    .budget-tick.active { opacity: 1; color: var(--accent); font-weight: 700; }
+
+    /* Submission area */
+    .form-submit-area {
+      display: flex; align-items: center; gap: 1.5rem;
+      flex-wrap: wrap; margin-top: .8rem;
+    }
+    #form-msg { font-size: .86rem; display: none; }
+    .form-gdpr {
+      font-size: .72rem; opacity: .42; margin-top: .3rem; line-height: 1.5;
+    }
+
+    /* ════════════════════════════════
+       BANDE PROCESSUS
+    ════════════════════════════════ */
+    #contact-process {
+      background: var(--ink); color: var(--bg);
+      padding: 6rem 0; position: relative; overflow: hidden;
+    }
+    #contact-process::before {
+      content: 'SUITE';
+      position: absolute; top: 50%; right: -1rem;
+      transform: translateY(-50%);
+      font-family: var(--f-head); font-weight: 900;
+      font-size: clamp(8rem, 16vw, 18rem);
+      color: rgba(255,254,240,.025); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+
+    .process-intro {
+      text-align: center; margin-bottom: 4rem;
+    }
+    .process-intro h2 {
+      font-family: var(--f-head); font-weight: 900;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      line-height: 1.1; margin-bottom: .8rem;
+    }
+    .process-intro h2 em { font-style: italic; color: var(--accent); }
+    .process-intro p { font-weight: 300; opacity: .55; font-size: .95rem; }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: calc(12.5% + 14px); right: calc(12.5% + 14px);
+      height: 1px;
+      border-top: 1.5px dashed rgba(255,254,240,.2);
+      pointer-events: none;
+    }
+
+    .step-card { text-align: center; }
+    .step-num {
+      width: 56px; height: 56px; margin: 0 auto 1.2rem;
+      border: 2px solid rgba(255,254,240,.25);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--f-head); font-weight: 900;
+      font-size: 1.1rem; color: var(--bg);
+      position: relative; z-index: 1;
+      background: var(--ink);
+      transition: background .3s, border-color .3s;
+    }
+    .step-card:hover .step-num { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+    .step-title {
+      font-family: var(--f-head); font-weight: 800;
+      font-size: .88rem; letter-spacing: .06em;
+      text-transform: uppercase; margin-bottom: .5rem;
+    }
+    .step-desc { font-size: .84rem; font-weight: 300; opacity: .52; line-height: 1.55; }
+
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .contact-info { position: static; }
+      .hero-split { grid-template-columns: 1fr; gap: 2.5rem; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .process-steps::before { display: none; }
+    }
+    @media (max-width: 600px) {
+      .form-row, .form-row-3 { grid-template-columns: 1fr; }
+      .checkboxes-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .form-submit-area { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Injection header (components.js) -->
+  <div id="header-root"></div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <canvas id="page-canvas" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="hero-split">
+        <div>
+          <p class="label reveal">Travaillons ensemble</p>
+          <h1 class="reveal">Parlez-nous de votre <em>projet</em></h1>
+        </div>
+        <div class="hero-aside reveal">
+          <p>Que vous planifiez un festival, une nuit en club ou une installation artistique, remplissez ce brief — plus vous nous en dites, plus notre réponse sera précise et adaptée à vos ambitions.</p>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span>⏱</span>
+              <span>Réponse sous <strong>48 h ouvrées</strong></span>
+            </div>
+            <div class="hero-meta-item">
+              <span>📍</span>
+              <span>Studio basé à <strong>Bruxelles</strong> — projets Belgique & Europe</span>
+            </div>
+            <div class="hero-meta-item">
+              <span>✦</span>
+              <span>Devis <strong>gratuit & sans engagement</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CONTACT PRINCIPAL
+  ══════════════════════════════════════════ -->
+  <section id="contact-main">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- ── Colonne gauche : informations ── -->
+        <aside class="contact-info reveal-left">
+
+          <h2 class="contact-info-title">Envie d'un <em>échange</em>&nbsp;?</h2>
+          <p class="contact-info-body">Vous pouvez aussi nous contacter directement, on est des humains accessibles.</p>
+
+          <div class="contact-channels">
+            <div class="contact-channel">
+              <div class="channel-icon">@</div>
+              <div class="channel-info">
+                <span class="channel-label">Email</span>
+                <span class="channel-value"><a href="mailto:contact@gribouille-eventlab.be">contact@gribouille-eventlab.be</a></span>
+                <span class="channel-sub">Pour toute demande formelle</span>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="channel-icon">ig</div>
+              <div class="channel-info">
+                <span class="channel-label">Instagram</span>
+                <span class="channel-value"><a href="https://instagram.com/gribouille_event_lab" target="_blank" rel="noopener">@gribouille_event_lab</a></span>
+                <span class="channel-sub">Nos réalisations en image</span>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="channel-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Localité</span>
+                <span class="channel-value">Bruxelles &amp; Belgique</span>
+                <span class="channel-sub">Déplacement possible sur devis</span>
+              </div>
+            </div>
+          </div>
+
+<p class="label" style="margin-bottom: 1rem;">Ce que vous pouvez attendre</p>
+          <div class="contact-promise">
+            <div class="promise-item">
+              <div class="promise-bullet">1</div>
+              <span>Lecture attentive de votre brief par l'équipe créative</span>
+            </div>
+            <div class="promise-item">
+              <div class="promise-bullet">2</div>
+              <span>Réponse personnalisée avec questions de cadrage si nécessaire</span>
+            </div>
+            <div class="promise-item">
+              <div class="promise-bullet">3</div>
+              <span>Proposition et devis détaillé, sans engagement de votre part</span>
+            </div>
+            <div class="promise-item">
+              <div class="promise-bullet">4</div>
+              <span>Rencontre (sur site ou en visio) pour affiner le concept</span>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- ── Colonne droite : formulaire ── -->
+        <div class="contact-form-wrap">
+          <form class="form" id="contactForm" novalidate>
+
+            <!-- ── 1. Qui êtes-vous ? ── -->
+            <h3 class="form-section-title reveal">
+              <span class="section-num">1</span>
+              Qui êtes-vous ?
+            </h3>
+
+            <div class="form-row reveal">
+              <div class="fg">
+                <label for="firstName">Prénom <span class="req">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="Jean" required autocomplete="given-name" />
+              </div>
+              <div class="fg">
+                <label for="lastName">Nom <span class="req">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Dupont" required autocomplete="family-name" />
+              </div>
+            </div>
+
+            <div class="form-row reveal">
+              <div class="fg">
+                <label for="email">Adresse email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="jean@monclub.be" required autocomplete="email" />
+              </div>
+              <div class="fg">
+                <label for="phone">Téléphone <span class="opt">(optionnel)</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+32 470 00 00 00" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="fg reveal">
+              <label for="organisation">Société / Organisation <span class="opt">(optionnel)</span></label>
+              <input type="text" id="organisation" name="organisation" placeholder="Mon Collectif ASBL, Festival XYZ, Club 123…" autocomplete="organization" />
+            </div>
+
+            <!-- ── 2. Votre projet ── -->
+            <h3 class="form-section-title reveal">
+              <span class="section-num">2</span>
+              Votre projet
+            </h3>
+
+            <div class="form-row reveal">
+              <div class="fg">
+                <label for="type">Type d'événement <span class="req">*</span></label>
+                <select id="type" name="type" required>
+                  <option value="">Choisir un type…</option>
+                  <option value="festival">Festival</option>
+                  <option value="club">Club / Bar</option>
+                  <option value="event-prive">Événement privé</option>
+                  <option value="collectif">Collectif / Association</option>
+                  <option value="installation">Installation artistique</option>
+                  <option value="corporate">Corporate / Entreprise</option>
+                  <option value="other">Autre</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label for="lieu">Lieu / Région <span class="req">*</span></label>
+                <input type="text" id="lieu" name="lieu" placeholder="Bruxelles, Liège, Paris…" required />
+              </div>
+            </div>
+
+            <div class="form-row reveal">
+              <div class="fg">
+                <label for="date">Date(s) envisagée(s) <span class="req">*</span></label>
+                <input type="text" id="date" name="date" placeholder="ex. Juillet 2025 ou 14-16/08/2025" required />
+                <span class="fg-hint">Date approximative acceptée</span>
+              </div>
+              <div class="fg">
+                <label for="duree">Durée de l'événement</label>
+                <select id="duree" name="duree">
+                  <option value="">Choisir…</option>
+                  <option value="1-soir">1 soir / nuit</option>
+                  <option value="1-jour">1 journée</option>
+                  <option value="weekend">1 week-end (2–3 jours)</option>
+                  <option value="semaine">Plusieurs jours (4–7)</option>
+                  <option value="installation-longue">Installation longue durée (&gt; 1 semaine)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="fg reveal">
+              <label for="capacite">Capacité attendue</label>
+              <select id="capacite" name="capacite">
+                <option value="">Choisir…</option>
+                <option value="moins-500">Moins de 500 personnes</option>
+                <option value="500-2000">500 – 2 000 personnes</option>
+                <option value="2000-5000">2 000 – 5 000 personnes</option>
+                <option value="5000-15000">5 000 – 15 000 personnes</option>
+                <option value="plus-15000">Plus de 15 000 personnes</option>
+                <option value="nc">Non communiqué / à définir</option>
+              </select>
+            </div>
+
+            <!-- ── 3. Services souhaités ── -->
+            <h3 class="form-section-title reveal">
+              <span class="section-num">3</span>
+              Services souhaités
+            </h3>
+
+            <div class="fg reveal">
+              <label>Quelles prestations vous intéressent ? <span class="opt">(plusieurs choix possibles)</span></label>
+              <div class="checkboxes-grid">
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="scenographie" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Scénographie & conception 3D</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="structures" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Structures certification</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="eclairage" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Éclairage & mapping</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="sonorisation" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Sonorisation</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="decors" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Décors & habillage</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="direction-artistique" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Direction artistique</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="conseil" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Conseil & accompagnement</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="cle-en-main" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Prestation clé en main</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="montage" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Montage/Démontage</span>
+                </label>
+                <label class="cb-item">
+                  <input type="checkbox" name="services[]" value="installation-fixe" />
+                  <span class="cb-box"></span>
+                  <span class="cb-label">Instalation fixe</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- ── 4. Décrivez votre projet ── -->
+            <h3 class="form-section-title reveal">
+              <span class="section-num">4</span>
+              Décrivez votre projet
+            </h3>
+
+            <div class="fg reveal">
+              <label for="message">Votre brief détaillé <span class="req">*</span></label>
+              <textarea id="message" name="message" rows="7" required
+                placeholder="Décrivez votre événement : concept général, ambiance souhaitée, contraintes techniques (surface, structure existante, accès), nombre de scènes / espaces, expériences passées, attentes particulières…"></textarea>
+              <span class="fg-hint">Plus vous nous donnez de détails, plus notre retour sera pertinent.</span>
+            </div>
+
+            <div class="fg reveal">
+              <label for="references">Inspirations & références <span class="opt">(optionnel)</span></label>
+              <textarea id="references" name="references" rows="3"
+                placeholder="Liens Pinterest, noms de festivals, artistes, mots-clés esthétiques (ex. « dark forest, pixel art, brutalisme »)…"></textarea>
+            </div>
+
+            <div class="fg reveal">
+              <label>Budget estimé <span class="opt">(optionnel)</span></label>
+              <span class="fg-hint" style="margin-bottom:.5rem;">Faites glisser pour indiquer votre fourchette — nous adaptons chaque projet.</span>
+              <div class="budget-gauge-wrap">
+                <div class="budget-value-display" id="budget-gauge-label">–</div>
+                <div class="budget-gauge-track">
+                  <div class="budget-segs" id="budget-segs">
+                    <div class="budget-seg"></div>
+                    <div class="budget-seg"></div>
+                    <div class="budget-seg"></div>
+                    <div class="budget-seg"></div>
+                    <div class="budget-seg"></div>
+                    <div class="budget-seg"></div>
+                    <div class="budget-seg"></div>
+                  </div>
+                  <input type="range" class="budget-range" id="budget-gauge"
+                         name="budget_gauge" min="0" max="6" step="1" value="-1"
+                         aria-label="Budget estimé" />
+                </div>
+                <div class="budget-ticks">
+                  <span class="budget-tick">< 5k€</span>
+                  <span class="budget-tick">5–10k€</span>
+                  <span class="budget-tick">10–25k€</span>
+                  <span class="budget-tick">25–50k€</span>
+                  <span class="budget-tick">50–100k€</span>
+                  <span class="budget-tick">> 100k€</span>
+                  <span class="budget-tick">À définir</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── 5. Pour mieux vous répondre ── -->
+            <h3 class="form-section-title reveal">
+              <span class="section-num">5</span>
+              Pour mieux vous répondre
+            </h3>
+
+            <div class="form-row reveal">
+              <div class="fg">
+                <label for="source">Comment nous avez-vous connus ?</label>
+                <select id="source" name="source">
+                  <option value="">Choisir…</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="bouche-a-oreille">Bouche à oreille</option>
+                  <option value="festival">Vu sur un festival</option>
+                  <option value="google">Recherche Google</option>
+                  <option value="collaborateur">Collaborateur / partenaire</option>
+                  <option value="presse">Presse / médias</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label for="urgence">Délai de réponse souhaité</label>
+                <select id="urgence" name="urgence">
+                  <option value="">Choisir…</option>
+                  <option value="urgent">Urgent — sous 24 h</option>
+                  <option value="normal">Normal — sous 48 h</option>
+                  <option value="semaine">Cette semaine</option>
+                  <option value="pas-presse">Pas pressé</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="fg reveal">
+              <label>Souhaitez-vous une rencontre / visio pour en discuter ?</label>
+              <div class="radios-inline">
+                <label class="rb-item">
+                  <input type="radio" name="rencontre" value="oui" />
+                  <span class="rb-dot"></span>
+                  <span class="rb-label">Oui, avec plaisir</span>
+                </label>
+                <label class="rb-item">
+                  <input type="radio" name="rencontre" value="non" />
+                  <span class="rb-dot"></span>
+                  <span class="rb-label">Non, par email suffit</span>
+                </label>
+                <label class="rb-item">
+                  <input type="radio" name="rencontre" value="indifferent" />
+                  <span class="rb-dot"></span>
+                  <span class="rb-label">Indifférent</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- ── Envoi ── -->
+            <div class="reveal" style="margin-top:.6rem;">
+              <div class="form-submit-area">
+                <button type="submit" class="btn btn--accent">
+                  Envoyer le brief →
+                </button>
+                <p id="form-msg"></p>
+              </div>
+              <p class="form-gdpr">En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour traiter votre demande. Aucune donnée n'est transmise à des tiers. <a href="#" style="color:var(--ink); opacity:.55;">Politique de confidentialité</a>.</p>
+            </div>
+
+          </form>
+        </div>
+        <!-- fin .contact-form-wrap -->
+
+      </div><!-- fin .contact-grid -->
+    </div><!-- fin .container -->
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PROCESSUS — WHAT HAPPENS NEXT
+  ══════════════════════════════════════════ -->
+  <section id="contact-process">
+    <div class="container">
+      <div class="process-intro reveal">
+        <p class="label" style="color: var(--accent);">Et après&nbsp;?</p>
+        <h2>Ce qui se passe <em>ensuite</em></h2>
+        <p>De votre brief à l'installation — notre façon de travailler.</p>
+      </div>
+      <div class="process-steps reveal-stagger">
+        <div class="step-card reveal-child">
+          <div class="step-num">01</div>
+          <p class="step-title">Brief reçu</p>
+          <p class="step-desc">On lit votre message, on explore vos références et on identifie les enjeux clés de votre projet.</p>
+        </div>
+        <div class="step-card reveal-child">
+          <div class="step-num">02</div>
+          <p class="step-title">Prise de contact</p>
+          <p class="step-desc">On vous répond sous 48 h avec nos premières pistes et les questions utiles pour affiner le brief.</p>
+        </div>
+        <div class="step-card reveal-child">
+          <div class="step-num">03</div>
+          <p class="step-title">Exploration créative</p>
+          <p class="step-desc">Concept visuel, moodboard, plan technique — on vous soumet une proposition sur mesure avec chiffrage détaillé.</p>
+        </div>
+        <div class="step-card reveal-child">
+          <div class="step-num">04</div>
+          <p class="step-title">Production</p>
+          <p class="step-desc">Fabrication, installation, régie le jour J — on gère tout de bout en bout pour que vous soyez serein.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Injection footer (components.js) -->
+  <div id="footer-root"></div>
+
+  <!-- Scripts partagés -->
+  <script src="js/components.js"></script>
+  <script src="js/shared.js"></script>
+
+  <script>
+    /* ── Rough.js — tracés décoratifs sur le hero ── */
+    (function drawPageCanvas() {
+      const cv = document.getElementById('page-canvas');
+      if (!cv || typeof rough === 'undefined') return;
+      cv.width  = cv.offsetWidth  || window.innerWidth;
+      cv.height = cv.offsetHeight || 320;
+      const rc = rough.canvas(cv);
+      const s = (n) => Math.floor(Math.random() * n);
+      const w = cv.width, h = cv.height;
+      for (let i = 0; i < 6; i++) {
+        rc.line(s(w*.4), s(h), w*.6 + s(w*.4), s(h), {
+          roughness: 2.4, stroke: 'rgba(18,2,30,.6)', strokeWidth: 1.2,
+          seed: i * 37 + 11
+        });
+      }
+      rc.rectangle(w*.07, h*.12, w*.86, h*.74, {
+        roughness: 3.2, stroke: 'rgba(18,2,30,.4)', strokeWidth: 1,
+        fill: 'none', seed: 99
+      });
+    })();
+
+    /* ── Formulaire contact ── */
+    (function initDetailedContactForm() {
+      const form    = document.getElementById('contactForm');
+      const formMsg = document.getElementById('form-msg');
+      if (!form) return;
+
+      /* Validation simple côté client */
+      function showError(input, msg) {
+        input.style.borderBottomColor = '#c0392b';
+        const old = input.parentNode.querySelector('.field-error');
+        if (!old) {
+          const err = document.createElement('span');
+          err.className = 'field-error';
+          err.style.cssText = 'font-size:.7rem;color:#c0392b;margin-top:.15rem;';
+          err.textContent = msg;
+          input.parentNode.appendChild(err);
+        }
+      }
+      function clearErrors() {
+        form.querySelectorAll('.field-error').forEach(e => e.remove());
+        form.querySelectorAll('input, textarea, select').forEach(el => {
+          el.style.borderBottomColor = '';
+        });
+      }
+
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        clearErrors();
+
+        let valid = true;
+        const required = form.querySelectorAll('[required]');
+        required.forEach(field => {
+          if (!field.value.trim()) {
+            showError(field, 'Ce champ est requis.');
+            valid = false;
+          }
+        });
+        if (!valid) {
+          const first = form.querySelector('.field-error');
+          if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        formMsg.style.display = 'block';
+        formMsg.style.color   = 'var(--accent)';
+        formMsg.textContent   = 'Envoi en cours…';
+
+        /* Collecte services cochés */
+        const services = Array.from(
+          form.querySelectorAll('input[name="services[]"]:checked')
+        ).map(cb => cb.value);
+
+        const data = {
+          ...Object.fromEntries(new FormData(form)),
+          services: services.join(', ')
+        };
+        delete data['services[]'];
+
+        try {
+          /* ↓ REMPLACER par votre endpoint Formspree / Netlify ↓ */
+          const res = await fetch('https://formspree.io/f/myknrdbl', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body:    JSON.stringify(data),
+          });
+
+          if (res.ok) {
+            formMsg.style.color = '#2d8a4e';
+            formMsg.textContent = '✓ Brief envoyé — on vous répond très vite !';
+            form.reset();
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            throw new Error('server');
+          }
+        } catch {
+          formMsg.style.color = '#c0392b';
+          formMsg.textContent = '✗ Une erreur est survenue. Réessayez ou écrivez-nous directement à contact@gribouille-eventlab.be';
+        }
+      });
+    })();
+
+    /* ── Jauge budget ── */
+    (function initBudgetGauge() {
+      const gauge   = document.getElementById('budget-gauge');
+      const label   = document.getElementById('budget-gauge-label');
+      const segs    = document.querySelectorAll('.budget-seg');
+      const ticks   = document.querySelectorAll('.budget-tick');
+      const select  = document.getElementById('budget');
+
+      const labels = [
+        'Moins de 5 000 €',
+        '5 000 – 10 000 €',
+        '10 000 – 25 000 €',
+        '25 000 – 50 000 €',
+        '50 000 – 100 000 €',
+        'Plus de 100 000 €',
+        'À définir ensemble'
+      ];
+      const values = [
+        'moins-5k','5-10k','10-25k','25-50k','50-100k','plus-100k','a-definir'
+      ];
+
+      function update(idx) {
+        segs.forEach((s, i)  => s.classList.toggle('filled', i <= idx));
+        ticks.forEach((t, i) => t.classList.toggle('active', i === idx));
+        label.textContent = idx >= 0 ? labels[idx] : '–';
+        if (select) select.value = idx >= 0 ? values[idx] : '';
+      }
+
+      gauge.addEventListener('input', e => update(parseInt(e.target.value)));
+
+      if (select) {
+        select.addEventListener('change', e => {
+          const idx = values.indexOf(e.target.value);
+          if (idx >= 0) { gauge.value = idx; update(idx); }
+          else          { gauge.value = 0;   update(-1); label.textContent = '–'; }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
