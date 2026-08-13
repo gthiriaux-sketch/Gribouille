@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique Cookies — Gribouille Event Lab</title>
+  <meta name="description" content="Politique d'utilisation des cookies de Gribouille Event Lab — informations sur les cookies utilisés sur notre site." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.gribouille-eventlab.be/politique-cookies.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Rough.js -->
+  <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/legal.css" />
+</head>
+<body>
+
+  <div id="header-root"></div>
+
+  <main>
+
+    <section class="page-hero legal-hero">
+      <div class="container" style="position:relative;z-index:1;">
+        <p class="label">Documents légaux</p>
+        <h1 id="legal-hero-title">Politique<br><em>Cookies</em></h1>
+        <p class="legal-intro" id="legal-hero-subtitle">Dernière mise à jour : mars 2025</p>
+      </div>
+    </section>
+
+    <section class="legal-content">
+      <div class="container legal-container" id="legal-sections-container">
+
+        <div class="legal-section">
+          <h2>1. Qu'est-ce qu'un cookie ?</h2>
+          <p>Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, smartphone, tablette) lors de la visite d'un site web. Il permet au site de mémoriser certaines informations sur votre navigation pour améliorer votre expérience.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>2. Cookies utilisés sur ce site</h2>
+          <p>Le site <strong>gribouille-eventlab.be</strong> n'utilise aucun cookie fonctionnel, publicitaire ou de traçage propre.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>3. Cookies tiers</h2>
+          <p>Ce site utilise les ressources externes suivantes, susceptibles de déposer leurs propres cookies :</p>
+          <ul>
+            <li><strong>Google Fonts</strong> — chargement des polices de caractères (peut déposer un cookie de session)</li>
+            <li><strong>jsDelivr (CDN)</strong> — chargement de la librairie Rough.js (aucun cookie de traçage)</li>
+          </ul>
+          <p>Nous n'utilisons pas de cookies publicitaires, de tracking comportemental, ni d'outils d'analyse tels que Google Analytics.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>4. Gestion des cookies</h2>
+          <p>Vous pouvez à tout moment contrôler et supprimer les cookies via les paramètres de votre navigateur :</p>
+          <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/fr/kb/activer-desactiver-cookies" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+            <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
+            <li><a href="https://support.microsoft.com/fr-fr/windows/supprimer-et-g%C3%A9rer-les-cookies" target="_blank" rel="noopener">Microsoft Edge</a></li>
+          </ul>
+          <p>Ce site n'utilisant pas de cookies fonctionnels propres, la suppression des cookies n'affecte pas son fonctionnement.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>5. Consentement</h2>
+          <p>En continuant à naviguer sur ce site, vous acceptez le dépôt des cookies strictement nécessaires à son fonctionnement. Aucun cookie de traçage ou publicitaire ne nécessite votre consentement préalable car nous n'en utilisons pas.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>6. Contact</h2>
+          <p>Pour toute question relative à notre utilisation des cookies : <a href="mailto:contact@gribouille-eventlab.be">contact@gribouille-eventlab.be</a></p>
+        </div>
+
+        <div class="legal-back">
+          <a href="index.html" class="btn btn--outline">← Retour à l'accueil</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+
+  <!-- Scripts partagés -->
+  <script src="js/layout-data.js"></script>
+  <script src="js/pages-data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/shared.js"></script>
+
+  <script>
+  (function () {
+    if (typeof PAGES_DEFAULTS === 'undefined') return;
+    const p = PAGES_DEFAULTS.legal_cookies;
+    if (!p) return;
+    if (p.hero) {
+      const t = document.getElementById('legal-hero-title');
+      if (t && p.hero.titleHtml) t.innerHTML = p.hero.titleHtml;
+      const s = document.getElementById('legal-hero-subtitle');
+      if (s && p.hero.subtitle) s.textContent = p.hero.subtitle;
+    }
+    if (p.sections && p.sections.length) {
+      const c = document.getElementById('legal-sections-container');
+      if (c) {
+        c.innerHTML = p.sections.map((sec, i) => `
+          <div class="legal-section">
+            <h2>${i + 1}. ${sec.title}</h2>
+            ${sec.bodyHtml}
+          </div>`).join('') +
+          '<div class="legal-back"><a href="index.html" class="btn btn--outline">← Retour à l\'accueil</a></div>';
+      }
+    }
+  })();
+  </script>
+
+</body>
+</html>

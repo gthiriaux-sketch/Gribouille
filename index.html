@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gribouille Event Lab — Scénographie Événementielle Immersive | Bruxelles</title>
+  <meta name="description" content="Studio de scénographie événementielle à Bruxelles. Conception et installation de décors pour festivals, clubs, soirées et événements privés. Du brief à l'installation — Belgique & Europe." />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="scénographie événementielle Bruxelles, décoration festival Belgique, installation immersive, production technique événementielle, design lumière LED, studio créatif bruxellois" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.gribouille-eventlab.be/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Gribouille Event Lab" />
+  <meta property="og:locale"      content="fr_BE" />
+  <meta property="og:url"         content="https://www.gribouille-eventlab.be/" />
+  <meta property="og:title"       content="Gribouille Event Lab — Scénographie Événementielle Immersive | Bruxelles" />
+  <meta property="og:description" content="Studio de scénographie événementielle à Bruxelles. Conception et installation de décors pour festivals, clubs, soirées et événements privés. Du brief à l'installation — Belgique & Europe." />
+  <meta property="og:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"   content="Gribouille Event Lab — Scénographie événementielle Bruxelles" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gribouille_event_lab" />
+  <meta name="twitter:title"       content="Gribouille Event Lab — Scénographie Événementielle Immersive | Bruxelles" />
+  <meta name="twitter:description" content="Studio de scénographie événementielle à Bruxelles. Conception et installation de décors pour festivals, clubs, soirées et événements privés. Du brief à l'installation — Belgique & Europe." />
+  <meta name="twitter:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Fira+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Rough.js — gribouillis hand-drawn effect -->
+  <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.min.js" defer></script>
+  
+  <!-- Données pages -->
+  <script src="js/layout-data.js"></script>
+  <script src="js/pages-data.js"></script>
+
+  <!-- Données projets -->
+  <script src="js/projects-data.js"></script>
+
+  <!-- Données stats -->
+  <script src="js/stats-data.js"></script>
+
+  <!-- Données ticker -->
+  <script src="js/ticker-data.js"></script>
+
+  <!-- Données prestations -->
+  <script src="js/services-data.js"></script>
+
+  <!-- Données méthode -->
+  <script src="js/methode-data.js"></script>
+
+  <!-- Données clients -->
+  <script src="js/clients-data.js"></script>
+
+  <!-- ★ Styles partagés (variables, reset, nav, footer, utilitaires…) -->
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/home.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.gribouille-eventlab.be/#website",
+        "url": "https://www.gribouille-eventlab.be/",
+        "name": "Gribouille Event Lab",
+        "description": "Studio de scénographie événementielle à Bruxelles",
+        "inLanguage": "fr-BE",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.gribouille-eventlab.be/projects.html?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": ["Organization", "LocalBusiness"],
+        "@id": "https://www.gribouille-eventlab.be/#organization",
+        "name": "Gribouille Event Lab",
+        "alternateName": "Gribouille",
+        "url": "https://www.gribouille-eventlab.be/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.gribouille-eventlab.be/img/logos/logo-header.png",
+          "width": 200,
+          "height": 60
+        },
+        "image": "https://www.gribouille-eventlab.be/img/og-cover.jpg",
+        "description": "Studio de scénographie événementielle à Bruxelles spécialisé en installations immersives pour festivals, clubs et événements privés.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bruxelles",
+          "addressRegion": "Bruxelles-Capitale",
+          "addressCountry": "BE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 50.8503,
+          "longitude": 4.3517
+        },
+        "areaServed": [
+          {"@type": "Country", "name": "Belgique"},
+          {"@type": "City", "name": "Bruxelles"},
+          {"@type": "City", "name": "Liège"},
+          {"@type": "City", "name": "Gand"},
+          {"@type": "City", "name": "Anvers"}
+        ],
+        "email": "contact@gribouille-eventlab.be",
+        "sameAs": [
+          "https://www.instagram.com/gribouille_event_lab"
+        ],
+        "knowsAbout": [
+          "Scénographie événementielle",
+          "Décoration de festival",
+          "Production technique événementielle",
+          "Éclairage LED événementiel",
+          "Vidéo mapping",
+          "Aménagement de club",
+          "Installations immersives",
+          "Architecture de scène"
+        ],
+        "priceRange": "€€€",
+        "@context": "https://schema.org"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div id="header-root"></div>
+
+  <main>
+
+  <!-- ══════════════════════════════════════
+       HERO — FULLSCREEN SPECTACULAIRE
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+
+    <!-- Fond plein écran -->
+    <div class="hero-bg">
+      <img
+        id="hero-bg-img"
+        src=""
+        alt="Scénographie immersive de festival avec éclairage spectaculaire"
+        loading="eager"
+      />
+    </div>
+
+    <!-- Canvas Rough.js -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Mot fantôme -->
+    <span class="hero-ghost" aria-hidden="true">GRIBOUILLE</span>
+
+    <!-- Contenu principal -->
+    <div class="hero-inner">
+      <div class="container">
+
+        <div class="hero-body">
+        <div class="hero-row">
+            <div>
+              <h1 id="hero-title">
+                On Crée<br>
+                Des Univers<br>
+                <em>Dans Vos</em> <span class="hl">Événements.</span>
+              </h1>
+            </div>
+            <div>
+              <p class="hero-desc" id="hero-desc">Du premier croquis au dernier rigging — nous concevons et installons des espaces scénographiques pour festivals, clubs et événements qui marquent les esprits bien après l'extinction des feux.</p>
+              <div class="hero-cta">
+                <a href="projects.html" class="btn btn--accent" id="hero-cta1">Voir nos réalisations</a>
+                <a href="contact.html" class="btn btn--ghost" id="hero-cta2">Démarrer un projet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STATS STRIP ── (rendu dynamique via js/stats-data.js + localStorage) -->
+        <div class="hero-stats" id="heroStats"></div>
+        <!-- / .hero-stats -->
+
+      </div>
+    </div>
+    <!-- / .hero-inner -->
+
+    <span class="scroll-hint">Défiler</span>
+
+  </section>
+
+  <!-- ══════════════════════════════════════
+       TICKER
+  ═══════════════════════════════════════ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       ABOUT (aperçu)
+  ═══════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-imgs reveal">
+          <img class="about-img about-img-a" id="about-img-a"
+            src=""
+            alt="L'équipe Gribouille Event Lab en train d'installer une scénographie" loading="lazy" />
+          <img class="about-img about-img-b" id="about-img-b"
+            src=""
+            alt="Public de festival sous une scénographie lumineuse immersive" loading="lazy" />
+        </div>
+
+        <div class="about-copy reveal">
+          <p class="label" id="about-label">Qui sommes-nous</p>
+          <h2 id="about-title">On dessine les idées,<br>puis on les construit.</h2>
+          <div id="about-body">
+            <p>Gribouille Event Lab est un studio créatif bruxellois spécialisé en scénographie événementielle et en installations techniques pour festivals, clubs, bars et collectifs culturels.</p>
+            <p>Notre nom dit tout — <em>gribouille</em>, c'est l'énergie brute du crayon sur le papier, l'idée qui prend forme avant même d'être pensée. C'est exactement comme ça qu'on démarre chaque projet : du premier croquis de production jusqu'au dernier câble. Chaque espace est une scène blanche.</p>
+            <p><em>Event Lab</em>, c'est notre promesse d'expérimenter, de tester, de construire autrement. On ne s'enferme pas dans des formules — on s'adapte à votre univers, à vos contraintes, à votre public.</p>
+            <p>On intervient sur toute la Belgique, en combinant fabrication artisanale et expertise technique de pointe.</p>
+          </div>
+          <a href="about.html" class="btn" id="about-btn">Notre histoire</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SERVICES (aperçu)
+  ═══════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="services-head">
+        <div>
+          <p class="label">Nos prestations</p>
+          <h2>Du croquis<br>à la sensation.</h2>
+        </div>
+        <a href="contact.html" class="btn">Lancer un projet</a>
+      </div>
+
+      <div class="services-grid reveal" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROJETS (aperçu)
+  ═══════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <p class="label">Réalisations sélectionnées</p>
+      <h2>Des projets qui<br>parlent d'eux-mêmes.</h2>
+
+      <div class="proj-grid reveal" id="home-projects"></div>
+
+      </div>
+
+      <div class="proj-footer">
+        <a href="projects.html" class="btn btn--ghost">Voir tous nos projets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROCESSUS
+  ═══════════════════════════════════════ -->
+  <section id="process">
+    <div class="container">
+      <p class="label">Notre méthode</p>
+      <h2>Quatre étapes,<br>une seule vision.</h2>
+
+      <div class="steps reveal" id="methode-steps"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CLIENTS
+  ═══════════════════════════════════════ -->
+  <section id="clients">
+    <div class="container">
+      <p class="label">Ils nous font confiance</p>
+      <div class="clients-row" id="clients-row"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CTA STRIP
+  ═══════════════════════════════════════ -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2 id="idx-cta-title">Une idée folle ?<br>On adore ça.</h2>
+      <p id="idx-cta-desc">Que vous ayez un brief complet ou juste une étincelle, notre équipe est là pour transformer votre vision en expérience scénographique inoubliable.</p>
+      <a href="contact.html" class="btn" id="idx-cta-btn">Parlons de votre projet →</a>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  </main>
+
+  <!-- ★ Scripts partagés -->
+  <script src="js/components.js"></script>
+  <script src="js/shared.js"></script>
+
+  <!-- ── Rough.js Hero ────────────────────── -->
+  <script>
+  function drawHeroScribbles() {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas || typeof rough === 'undefined') return;
+
+    const parent = document.getElementById('hero');
+    canvas.width  = parent.offsetWidth;
+    canvas.height = parent.offsetHeight;
+
+    const rc   = rough.canvas(canvas);
+    const w    = canvas.width;
+    const h    = canvas.height;
+    const seed = Math.floor(Math.random() * 900) + 1;
+    const opt  = { stroke: 'rgba(255,254,240,1)', strokeWidth: 1.2, roughness: 2.8, seed };
+
+    rc.line(w*.06, h*.08, w*.92, h*.14, opt);
+    rc.line(w*.02, h*.28, w*.22, h*.88, opt);
+    rc.line(w*.78, h*.04, w*.98, h*.72, opt);
+    rc.line(w*.08, h*.92, w*.96, h*.84, opt);
+  }
+
+  window.addEventListener('load',   drawHeroScribbles);
+  window.addEventListener('resize', drawHeroScribbles);
+
+  /* ── Clients : rendu dynamique ───────────────────────── */
+  (function renderClients() {
+    const section = document.getElementById('clients');
+    const row = document.getElementById('clients-row');
+    if (!row || typeof CLIENTS_DEFAULTS === 'undefined') return;
+    if (typeof CLIENTS_ENABLED !== 'undefined' && !CLIENTS_ENABLED) {
+      if (section) section.style.display = 'none';
+      return;
+    }
+    row.innerHTML = CLIENTS_DEFAULTS.filter(c => {
+      return typeof c === 'string' || c.active !== false;
+    }).map(c => {
+      const name = typeof c === 'string' ? c : c.name;
+      const url  = typeof c === 'object' ? c.url : '';
+      return url
+        ? `<a class="client-name" href="${url}" target="_blank" rel="noopener">${name}</a>`
+        : `<span class="client-name">${name}</span>`;
+    }).join('');
+  })();
+
+  /* ── Méthode : rendu dynamique ───────────────────────── */
+  (function renderMethode() {
+    const container = document.getElementById('methode-steps');
+    if (!container || typeof METHODE_DEFAULTS === 'undefined') return;
+    container.innerHTML = METHODE_DEFAULTS.map((s, i) => `
+      <div class="step">
+        <div class="step-n">${String(i + 1).padStart(2, '0')}</div>
+        <h3>${s.title}</h3>
+        <p>${s.text}</p>
+      </div>
+    `).join('');
+  })();
+
+  /* ── Prestations : rendu dynamique ───────────────────── */
+  (function renderServices() {
+    const grid = document.getElementById('services-grid');
+    if (!grid || typeof SERVICES_DEFAULTS === 'undefined') return;
+    const visible = SERVICES_DEFAULTS.filter(s => s.showOnIndex !== false);
+    grid.innerHTML = visible.map((s, i) => `
+      <div class="svc">
+        <span class="svc-num">${String(i + 1).padStart(2, '0')}</span>
+        <img src="${s.icon}" class="svc-icon" alt="${s.title}" loading="lazy">
+        <h3>${s.title}</h3>
+        <p>${s.text}</p>
+      </div>
+    `).join('');
+  })();
+
+  /* ── Live Stats : rendu + compteurs animés ────────────── */
+  (function initHeroStats() {
+    const container = document.getElementById('heroStats');
+    if (!container || typeof STATS_DEFAULTS === 'undefined') return;
+
+    // Fusionner les defaults avec les overrides localStorage
+    let stats = STATS_DEFAULTS;
+    try {
+      const saved = localStorage.getItem('gribouille_live_stats');
+      if (saved) stats = JSON.parse(saved);
+    } catch(e) {}
+
+    // Rendre le HTML
+    container.innerHTML = stats.map(s => `
+      <div class="hstat">
+        <span class="hstat-num" data-target="${s.target}" data-suffix="${s.suffix}">0</span>
+        <span class="hstat-label">${s.label}</span>
+        <span class="hstat-status${s.active ? ' active' : ''}">${s.status}</span>
+        <span class="hstat-bar"></span>
+      </div>
+    `).join('');
+
+    // Animer les compteurs
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const dur    = 1600;
+      const start  = performance.now();
+
+      function frame(now) {
+        const t = Math.min((now - start) / dur, 1);
+        el.textContent = Math.round(easeOut(t) * target) + suffix;
+        if (t < 1) requestAnimationFrame(frame);
+        else {
+          el.textContent = target + suffix;
+          el.closest('.hstat').classList.add('counted');
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    const els = container.querySelectorAll('.hstat-num[data-target]');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animateCounter(e.target); obs.unobserve(e.target); }
+      });
+    }, { threshold: .3 });
+    els.forEach(el => obs.observe(el));
+  })();
+
+(function renderHomeProjects() {
+  if (typeof PROJECTS === "undefined") return;
+
+  const container = document.getElementById("home-projects");
+  if (!container) return;
+
+  const sorted = [...PROJECTS].reverse().sort((a, b) => parseInt(b.year) - parseInt(a.year));
+  const latest = sorted.slice(0, 5);
+
+  container.innerHTML = latest.map((p, i) => {
+    return `
+      <a href="project-detail.html?id=${p.id}" class="proj">
+        <img src="${p.img}" alt="${p.imgAlt || p.title}" loading="lazy" />
+        <div class="proj-ov">
+          <p class="proj-tag">${CATEGORY_LABELS[p.cat] || p.cat}</p>
+          <p class="proj-year">${p.year}</p>
+          <p class="proj-name">${p.title}</p>
+          <span class="proj-link-cta">Voir le projet →</span>
+        </div>
+      </a>
+    `;
+  }).join("");
+})();</script>
+
+<!-- ── Injection pages-data.js › Accueil ── -->
+<script>
+(function () {
+  if (typeof PAGES_DEFAULTS === 'undefined' || !PAGES_DEFAULTS.index) return;
+  const p = PAGES_DEFAULTS.index;
+
+  // Hero
+  if (p.hero) {
+    const h = p.hero;
+    const bgImg = document.getElementById('hero-bg-img');
+    if (bgImg && h.image)    { bgImg.src = h.image; }
+    if (bgImg && h.imageAlt) { bgImg.alt = h.imageAlt; }
+    const title = document.getElementById('hero-title');
+    if (title && h.titleHtml) title.innerHTML = h.titleHtml;
+    const desc = document.getElementById('hero-desc');
+    if (desc && h.description) desc.textContent = h.description;
+    const cta1 = document.getElementById('hero-cta1');
+    if (cta1) { if (h.cta1Label) cta1.textContent = h.cta1Label; if (h.cta1Href) cta1.href = h.cta1Href; }
+    const cta2 = document.getElementById('hero-cta2');
+    if (cta2) { if (h.cta2Label) cta2.textContent = h.cta2Label; if (h.cta2Href) cta2.href = h.cta2Href; }
+  }
+
+  // About preview
+  if (p.about) {
+    const a = p.about;
+    const lbl = document.getElementById('about-label');
+    if (lbl && a.label) lbl.textContent = a.label;
+    const ttl = document.getElementById('about-title');
+    if (ttl && a.titleHtml) ttl.innerHTML = a.titleHtml;
+    const body = document.getElementById('about-body');
+    if (body && a.paragraphs && a.paragraphs.length) {
+      body.innerHTML = a.paragraphs.map(t => `<p>${t}</p>`).join('');
+    }
+    const img1 = document.getElementById('about-img-a');
+    if (img1) { if (a.image1) img1.src = a.image1; if (a.image1Alt) img1.alt = a.image1Alt; }
+    const img2 = document.getElementById('about-img-b');
+    if (img2) { if (a.image2) img2.src = a.image2; if (a.image2Alt) img2.alt = a.image2Alt; }
+    const btn = document.getElementById('about-btn');
+    if (btn) { if (a.btnLabel) btn.textContent = a.btnLabel; if (a.btnHref) btn.href = a.btnHref; }
+  }
+
+  // CTA strip
+  if (p.cta) {
+    const c = p.cta;
+    const ctaTitle = document.getElementById('idx-cta-title');
+    if (ctaTitle && c.titleHtml) ctaTitle.innerHTML = c.titleHtml;
+    const ctaDesc = document.getElementById('idx-cta-desc');
+    if (ctaDesc && c.desc) ctaDesc.textContent = c.desc;
+    const ctaBtn = document.getElementById('idx-cta-btn');
+    if (ctaBtn) { if (c.btnLabel) ctaBtn.textContent = c.btnLabel; if (c.btnHref) ctaBtn.href = c.btnHref; }
+  }
+})();
+</script>
+
+</body>
+</html>

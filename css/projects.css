@@ -1,0 +1,100 @@
+/* ════════════════════════════════
+   PAGE HERO
+════════════════════════════════ */
+/* Mot fantôme décoratif */
+.page-hero::before {
+  content: 'WORK';
+  position: absolute; top: 50%; right: -2rem; transform: translateY(-50%);
+  font-family: var(--f-head); font-weight: 900;
+  font-size: clamp(8rem, 18vw, 18rem);
+  color: rgba(18,2,30,.035); line-height: 1;
+  pointer-events: none; letter-spacing: -.04em; user-select: none;
+}
+
+.page-hero-inner { display: grid; grid-template-columns: 1fr auto; align-items: flex-end; gap: 3rem; }
+.page-hero h1 { font-family: var(--f-head); font-weight: 900; font-size: clamp(3rem, 6.5vw, 6.5rem); line-height: .95; letter-spacing: -.03em; }
+.page-hero h1 .hl { position: relative; display: inline-block; }
+.page-hero h1 .hl::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 8px; background: var(--accent); z-index: -1; }
+
+.page-hero-meta { text-align: right; padding-bottom: .5rem; }
+.page-hero-meta p { font-size: .85rem; font-weight: 300; opacity: .62; max-width: 280px; line-height: 1.55; }
+.page-hero-count { font-family: var(--f-head); font-weight: 900; font-size: 3.5rem; color: var(--accent); line-height: 1; margin-bottom: .3rem; }
+
+/* ════════════════════════════════
+   FILTRE
+════════════════════════════════ */
+.filter-bar { padding: 2rem 0 3rem; border-top: 1.5px solid rgba(18,2,30,.14); }
+.filter-inner { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.filter-label { font-family: var(--f-head); font-weight: 800; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; opacity: .38; margin-right: .5rem; }
+
+/* Boutons filtre */
+.filter-btn { font-family: var(--f-head); font-weight: 800; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; padding: .45rem 1.2rem; border: 2px solid rgba(18,2,30,.2); background: transparent; color: rgba(18,2,30,.5); cursor: pointer; transition: all .22s; }
+.filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+.filter-btn.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+/* ════════════════════════════════
+   GRILLE PROJETS
+   ──────────────────────────────
+   Chaque .proj-card prend :
+     data-cat   = catégorie filtre (doit correspondre au data-filter du bouton)
+     data-span  = largeur en colonnes (sur 12)
+     data-ratio = ratio (wide/square/tall/std/film)
+
+   Pour AJOUTER un projet :
+     1. Copier un bloc .proj-card
+     2. Renseigner data-cat, data-span, data-ratio
+     3. Remplacer img src, alt
+     4. Modifier proj-cat, proj-year-tag, proj-title, proj-desc
+
+════════════════════════════════ */
+.projects-section { padding-bottom: 8rem; }
+
+.proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+.proj-card { position: relative; overflow: hidden; cursor: pointer; transition: opacity .4s, transform .4s; aspect-ratio: 4/3; }
+.proj-card.hidden { display: none; }
+/* Quand .proj-card est un <a>, neutraliser les styles de lien */
+a.proj-card { color: inherit; text-decoration: none; display: block; }
+
+.proj-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .65s ease, filter .4s; filter: grayscale(15%); display: block; }
+.proj-card:hover img { transform: scale(1.06); filter: grayscale(0%); }
+
+/* Overlay au survol */
+.proj-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(18,2,30,.88) 0%, rgba(18,2,30,.3) 55%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.8rem 1.5rem; opacity: 0; transition: opacity .35s; }
+.proj-card:hover .proj-ov { opacity: 1; }
+
+.proj-cat      { font-family: var(--f-body); font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: .25rem; }
+.proj-year-tag { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,254,240,.5); margin-bottom: .4rem; }
+.proj-title    { font-family: var(--f-head); font-weight: 800; font-size: 1.05rem; color: var(--bg); margin-bottom: .35rem; }
+.proj-desc     { font-size: .78rem; font-weight: 300; color: rgba(255,254,240,.65); line-height: 1.45; }
+
+/* Lien détail projet */
+.proj-card-link {
+  display: contents; /* se comporte comme un conteneur transparent */
+}
+.proj-link-cta {
+  display: inline-flex; align-items: center; gap: .45rem;
+  margin-top: .7rem;
+  font-family: var(--f-head); font-weight: 800;
+  font-size: .6rem; letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(250,183,34,.35);
+  padding-bottom: 2px;
+  transition: gap .25s, border-color .25s;
+}
+.proj-card:hover .proj-link-cta { gap: .75rem; border-color: var(--accent); }
+
+/* Layout automatique — grille uniforme 2 colonnes, ratio 4/3 */
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 1024px) {
+  .page-hero-inner { grid-template-columns: 1fr; }
+  .page-hero-meta  { text-align: left; }
+}
+@media (max-width: 768px) {
+  .proj-grid  { grid-template-columns: 1fr; }
+  .filter-inner { gap: .6rem; }
+}

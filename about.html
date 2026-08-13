@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À Propos — Gribouille Event Lab | Studio de Scénographie Bruxelles</title>
+  <meta name="description" content="Découvrez l'équipe et la philosophie de Gribouille Event Lab — studio créatif bruxellois spécialisé en scénographie immersive et installations techniques pour festivals et clubs." />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="studio scénographie Bruxelles, équipe créative événementielle, scénographe Belgique, Gribouille Event Lab histoire" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.gribouille-eventlab.be/about.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Gribouille Event Lab" />
+  <meta property="og:locale"      content="fr_BE" />
+  <meta property="og:url"         content="https://www.gribouille-eventlab.be/about.html" />
+  <meta property="og:title"       content="À Propos — Gribouille Event Lab | Studio de Scénographie Bruxelles" />
+  <meta property="og:description" content="Découvrez l'équipe et la philosophie de Gribouille Event Lab — studio créatif bruxellois spécialisé en scénographie immersive et installations techniques pour festivals et clubs." />
+  <meta property="og:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"   content="Gribouille Event Lab — Scénographie événementielle Bruxelles" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gribouille_event_lab" />
+  <meta name="twitter:title"       content="À Propos — Gribouille Event Lab | Studio de Scénographie Bruxelles" />
+  <meta name="twitter:description" content="Découvrez l'équipe et la philosophie de Gribouille Event Lab — studio créatif bruxellois spécialisé en scénographie immersive et installations techniques pour festivals et clubs." />
+  <meta name="twitter:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Rough.js -->
+  <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.min.js" defer></script>
+
+  <!-- ★ Styles partagés -->
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/about.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": "https://www.gribouille-eventlab.be/about.html",
+    "url": "https://www.gribouille-eventlab.be/about.html",
+    "name": "À Propos — Gribouille Event Lab",
+    "description": "Découvrez l'équipe et la philosophie de Gribouille Event Lab, studio de scénographie événementielle à Bruxelles.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://www.gribouille-eventlab.be/#website"
+    },
+    "about": {
+      "@type": "Organization",
+      "@id": "https://www.gribouille-eventlab.be/#organization"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div id="header-root"></div>
+
+  <main>
+
+  <!-- ══════════════════════════════════════
+       PAGE HERO
+       → Modifier le titre h1 et la citation manifesto
+  ═══════════════════════════════════════ -->
+  <section class="page-hero">
+    <canvas id="page-canvas"></canvas>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="label">Qui Nous Sommes</p>
+      <div class="hero-split">
+
+        <h1 class="reveal-left" id="about-hero-title">
+          On Dessine.<br>
+          On <em>Fabrique.</em><br>
+          On Crée.
+        </h1>
+
+        <div class="hero-manifesto reveal-right">
+          <blockquote id="about-hero-quote">
+            "Chaque grand événement commence pareil : une page blanche et un esprit qui bouillonne. On transforme ces premiers gribouillis en espaces qui font lever la tête, ouvrir les yeux, et ne jamais oublier."
+          </blockquote>
+          <cite id="about-hero-cite">— Le Manifeste Gribouille</cite>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       STORY / ORIGINE
+       → Modifier les blocs de texte.
+       → Ajouter/supprimer des images via la médiathèque
+  ═══════════════════════════════════════ -->
+  <section id="story">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="story-grid">
+
+        <div class="story-sticky reveal-left">
+          <p class="label" id="story-label">Notre Origine</p>
+          <h2 id="story-title">Né d'un <span class="hl">Gribouilli.</span></h2>
+          <div id="story-body">
+            <p>Gribouille Event Lab est né à Bruxelles d'une conviction simple : les meilleurs espaces sont ceux qui semblent impossibles jusqu'au moment où ils existent enfin.</p>
+            <p>Notre nom vient de là — ce gribouilli fébrile griffonné sur une serviette à 2h du matin. Ce chaos-là, c'est notre terrain de jeu. On prend le croquis et on le rend réel.</p>
+            <p>On est des techniciens qui rêvent, et des rêveurs qui savent souder. Cette combinaison rare, c'est ce qui nous distingue — du premier trait de crayon au dernier câble en place.</p>
+            <p>Basés à Bruxelles, on collabore à travers la Belgique et l'Europe, avec la même obsession du détail pour une nuit de club de 400 personnes que pour la main stage d'un festival de 40 000.</p>
+          </div>
+          <br>
+          <a href="projects.html" class="btn btn--accent" id="story-cta">Voir Nos Réalisations</a>
+        </div>
+
+        <div class="story-images reveal-right" id="story-images">
+          <img class="story-img" id="story-img-0"
+            src=""
+            alt="Installation de scène en cours" loading="lazy" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- ══════════════════════════════════════
+       VALEURS
+       → Modifier titre et description de chaque value-card
+       → Ajouter/supprimer des cartes selon le nombre de valeurs
+  ═══════════════════════════════════════ -->
+  <section id="values">
+    <div class="container">
+      <p class="label" id="values-label">Ce Qui Nous Anime</p>
+      <h2 class="reveal" id="values-title">Trois Principes.<br>Chaque Projet.</h2>
+
+      <div class="values-grid reveal" id="values-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ÉQUIPE
+       → Gérer les membres dans les données de l'équipe
+  ═══════════════════════════════════════ -->
+  <section id="team">
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="label">Notre Équipe</p>
+      <h2 class="reveal">Les gens <em>derrière</em><br>la magie.</h2>
+      <div class="team-grid reveal" id="team-grid"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2 id="about-cta-title">Créons Quelque<br>Chose Ensemble.</h2>
+      <p id="about-cta-desc">Amenez-nous votre idée la plus folle. On apporte le masque de soudure et le carnet de croquis.</p>
+      <a href="contact.html" class="btn" id="about-cta-btn">Nous Contacter</a>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  </main>
+
+  <!-- ★ Scripts partagés -->
+  <script src="js/layout-data.js"></script>
+  <script src="js/pages-data.js"></script>
+  <script src="js/valeurs-data.js"></script>
+  <script src="js/team-data.js"></script>
+  <script src="js/components.js"></script>
+
+  <!-- Rendu dynamique des valeurs depuis valeurs-data.js -->
+  <script>
+  (function () {
+    const grid = document.getElementById('values-grid');
+    if (!grid || typeof VALEURS_DEFAULTS === 'undefined') return;
+    grid.innerHTML = VALEURS_DEFAULTS.map((v, i) => `
+      <div class="value-card">
+        <span class="value-n">${String(i + 1).padStart(2, '0')}</span>
+        <img src="${v.icon}" class="svc-icon" alt="${v.title}" loading="lazy">
+        <h3>${v.title}</h3>
+        <p>${v.text}</p>
+      </div>`).join('');
+  })();
+  </script>
+
+  <script src="js/shared.js"></script>
+
+<!-- ── Rendu équipe depuis team-data.js ── -->
+<script>
+(function () {
+  const section = document.getElementById('team');
+  if (typeof TEAM_ENABLED !== 'undefined' && !TEAM_ENABLED) {
+    if (section) section.style.display = 'none';
+    return;
+  }
+  const grid = document.getElementById('team-grid');
+  if (!grid || typeof TEAM_DEFAULTS === 'undefined') return;
+
+  const chars = (typeof TEAM_CHARS !== 'undefined') ? TEAM_CHARS : [];
+  grid.innerHTML = TEAM_DEFAULTS.map((m, i) => {
+    const c = chars[m.variant || 0];
+    return `
+    <div class="team-card reveal-child">
+      ${c?.photo
+        ? `<img src="${c.photo}" alt="${m.prenom} ${m.initial}" class="team-photo" loading="lazy">`
+        : `<canvas id="team-cv-${i}" width="200" height="240"></canvas>`
+      }
+      <div class="team-name">${m.prenom} <span class="team-initial">${m.initial}</span></div>
+      <div class="team-poste">${m.poste}</div>
+    </div>`;
+  }).join('');
+
+  function drawChar(canvas, variant) {
+    if (!canvas || typeof rough === 'undefined') return;
+    const rc  = rough.canvas(canvas);
+    const W   = canvas.width, H = canvas.height, cx = W / 2;
+    const INK = '#12021E', ACC = '#fab722', SKIN = '#F5C9A0', WH = '#fffef0';
+    const s = (fill, rgh) => ({ stroke: INK, strokeWidth: 2.2, roughness: rgh || 1.8, fill, fillStyle: 'solid', fillWeight: 2 });
+    const ln = (w) => ({ stroke: INK, strokeWidth: w || 2.5, roughness: 2 });
+
+    if (variant === 0) {
+      // Robe
+      rc.path(`M ${cx-44} ${H*.56} Q ${cx} ${H*.63} ${cx+44} ${H*.56} L ${cx+62} ${H*.94} L ${cx-62} ${H*.94} Z`, s(ACC));
+      // Bras
+      rc.line(cx-42, H*.54, cx-68, H*.73, { ...ln(10), roughness:1.2 });
+      rc.ellipse(cx-70, H*.75, 16, 16, s(SKIN));
+      rc.line(cx+42, H*.54, cx+66, H*.71, { ...ln(10), roughness:1.2 });
+      rc.ellipse(cx+68, H*.73, 16, 16, s(SKIN));
+      // Torse
+      rc.ellipse(cx, H*.52, 82, 54, s(SKIN));
+      // Cou
+      rc.rectangle(cx-11, H*.40, 22, 15, s(SKIN, 1.2));
+      // Tête
+      rc.ellipse(cx, H*.30, 90, 94, s(SKIN));
+      // Béret
+      rc.arc(cx-5, H*.185, 96, 60, Math.PI*1.07, Math.PI*2.0, true, s(INK));
+      rc.ellipse(cx-5, H*.20, 96, 24, s(INK, 1.2));
+      // Pompon
+      rc.ellipse(cx+22, H*.11, 16, 16, s(ACC));
+      // Yeux
+      rc.ellipse(cx-17, H*.29, 11, 13, s(INK));
+      rc.ellipse(cx+17, H*.29, 11, 13, s(INK));
+      rc.ellipse(cx-15, H*.275, 4, 4, s(WH));
+      rc.ellipse(cx+19, H*.275, 4, 4, s(WH));
+      // Nez
+      rc.arc(cx, H*.355, 11, 9, 0, Math.PI, false, ln(1.5));
+      // Sourire
+      rc.arc(cx, H*.39, 32, 19, 0, Math.PI, false, ln(2.5));
+      // Joues
+      rc.ellipse(cx-28, H*.36, 20, 11, { stroke:'none', fill:'#FFB3C1', fillStyle:'solid', roughness:2 });
+      rc.ellipse(cx+28, H*.36, 20, 11, { stroke:'none', fill:'#FFB3C1', fillStyle:'solid', roughness:2 });
+      // Pieds
+      rc.ellipse(cx-26, H*.965, 30, 16, s(INK, 1.2));
+      rc.ellipse(cx+26, H*.965, 30, 16, s(INK, 1.2));
+    } else {
+      // Jambes
+      rc.path(`M ${cx-44} ${H*.74} L ${cx-37} ${H*.96} L ${cx-11} ${H*.96} L ${cx-7} ${H*.74} Z`, s(INK, 1.5));
+      rc.path(`M ${cx+7} ${H*.74} L ${cx+11} ${H*.96} L ${cx+37} ${H*.96} L ${cx+44} ${H*.74} Z`, s(INK, 1.5));
+      // Chaussures
+      rc.ellipse(cx-23, H*.975, 34, 16, s(INK, 1.2));
+      rc.ellipse(cx+23, H*.975, 34, 16, s(INK, 1.2));
+      // Chemise
+      rc.path(`M ${cx-50} ${H*.74} L ${cx-50} ${H*.51} Q ${cx} ${H*.45} ${cx+50} ${H*.51} L ${cx+50} ${H*.74} Z`, s(ACC));
+      // Bras
+      rc.line(cx-48, H*.53, cx-74, H*.70, { ...ln(10), roughness:1.2 });
+      rc.ellipse(cx-76, H*.72, 16, 16, s(SKIN));
+      rc.line(cx+48, H*.53, cx+72, H*.67, { ...ln(10), roughness:1.2 });
+      rc.ellipse(cx+74, H*.69, 16, 16, s(SKIN));
+      // Crayon
+      rc.line(cx+78, H*.63, cx+92, H*.43, { stroke:ACC, strokeWidth:4.5, roughness:1.5 });
+      rc.line(cx+92, H*.43, cx+96, H*.36, ln(2));
+      // Cou
+      rc.rectangle(cx-11, H*.39, 22, 15, s(SKIN, 1.2));
+      // Tête
+      rc.ellipse(cx, H*.29, 92, 92, s(SKIN));
+      // Cheveux hérissés (avant l'arc foncé pour être derrière)
+      [[-36,H*.165,-42,H*.028],[-17,H*.13,-19,H*-.005],[0,H*.12,0,H*-.005],[17,H*.13,19,H*-.005],[36,H*.165,42,H*.028]].forEach(([x1,y1,x2,y2]) =>
+        rc.line(cx+x1, y1, cx+x2, y2, { ...ln(4.5), roughness:2.5 })
+      );
+      // Base cheveux
+      rc.arc(cx, H*.175, 92, 50, Math.PI, 2*Math.PI, false, s(INK, 1.5));
+      // Lunettes
+      const gl = { stroke:INK, strokeWidth:2.5, roughness:2, fill:'rgba(250,183,34,.2)', fillStyle:'solid' };
+      rc.rectangle(cx-36, H*.262, 30, 22, gl);
+      rc.rectangle(cx+6,  H*.262, 30, 22, gl);
+      rc.line(cx-6, H*.273, cx+6, H*.273, ln(2));
+      rc.line(cx-66, H*.273, cx-36, H*.273, ln(2));
+      rc.line(cx+36, H*.273, cx+64, H*.273, ln(2));
+      // Yeux
+      rc.ellipse(cx-21, H*.273, 8, 11, s(INK));
+      rc.ellipse(cx+21, H*.273, 8, 11, s(INK));
+      // Nez
+      rc.line(cx-3, H*.33, cx+2, H*.355, ln(1.5));
+      // Sourire
+      rc.arc(cx, H*.38, 30, 18, 0, Math.PI, false, ln(2.5));
+    }
+  }
+
+  var _chars = (typeof TEAM_CHARS !== 'undefined') ? TEAM_CHARS : [];
+  function drawAll() {
+    TEAM_DEFAULTS.forEach(function (m, i) {
+      var c = _chars[m.variant || 0];
+      if (c && c.photo) return; // photo gère l'affichage
+      var cv = document.getElementById('team-cv-' + i);
+      if (cv) drawChar(cv, m.variant || 0);
+    });
+  }
+
+  // Dessiner dès que possible (multiple fallbacks)
+  if (document.readyState === 'complete') {
+    setTimeout(drawAll, 0);
+  } else {
+    window.addEventListener('load', function () { setTimeout(drawAll, 50); });
+  }
+  // Fallback via IntersectionObserver : redessine quand la section est visible
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { drawAll(); obs.disconnect(); }
+      });
+    }, { threshold: 0.1 });
+    obs.observe(document.getElementById('team'));
+  }
+})();
+</script>
+
+<!-- ── Injection pages-data.js › À Propos ── -->
+<script>
+(function () {
+  if (typeof PAGES_DEFAULTS === 'undefined' || !PAGES_DEFAULTS.about) return;
+  const p = PAGES_DEFAULTS.about;
+
+  // Hero
+  if (p.hero) {
+    const h = p.hero;
+    const t = document.getElementById('about-hero-title');
+    if (t && h.titleHtml) t.innerHTML = h.titleHtml;
+    const q = document.getElementById('about-hero-quote');
+    if (q && h.manifestoQuote) q.textContent = h.manifestoQuote;
+    const c = document.getElementById('about-hero-cite');
+    if (c && h.manifestoCite) c.textContent = h.manifestoCite;
+  }
+
+  // Story
+  if (p.story) {
+    const s = p.story;
+    const lbl = document.getElementById('story-label');
+    if (lbl && s.label) lbl.textContent = s.label;
+    const ttl = document.getElementById('story-title');
+    if (ttl && s.titleHtml) ttl.innerHTML = s.titleHtml;
+    const body = document.getElementById('story-body');
+    if (body && s.paragraphs && s.paragraphs.length) {
+      body.innerHTML = s.paragraphs.map(t => `<p>${t}</p>`).join('');
+    }
+    const cta = document.getElementById('story-cta');
+    if (cta) { if (s.ctaLabel) cta.textContent = s.ctaLabel; if (s.ctaHref) cta.href = s.ctaHref; }
+    if (s.images && s.images.length) {
+      const img = s.images[0];
+      const el = document.getElementById('story-img-0');
+      if (el) { if (img.src) el.src = img.src; if (img.alt) el.alt = img.alt; }
+    }
+  }
+
+  // Values section
+  if (p.values) {
+    const vl = document.getElementById('values-label');
+    if (vl && p.values.label) vl.textContent = p.values.label;
+    const vt = document.getElementById('values-title');
+    if (vt && p.values.titleHtml) vt.innerHTML = p.values.titleHtml;
+  }
+
+  // CTA strip
+  if (p.cta) {
+    const c = p.cta;
+    const t = document.getElementById('about-cta-title');
+    if (t && c.titleHtml) t.innerHTML = c.titleHtml;
+    const d = document.getElementById('about-cta-desc');
+    if (d && c.desc) d.textContent = c.desc;
+    const b = document.getElementById('about-cta-btn');
+    if (b) { if (c.btnLabel) b.textContent = c.btnLabel; if (c.btnHref) b.href = c.btnHref; }
+  }
+})();
+</script>
+
+</body>
+</html>

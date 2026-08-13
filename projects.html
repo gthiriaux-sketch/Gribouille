@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Gribouille Event Lab | Portfolio Scénographie Événementielle</title>
+  <meta name="description" content="Portfolio de réalisations en scénographie immersive : festivals, clubs, bars et collectifs à Bruxelles et en Belgique. Découvrez nos projets de décoration événementielle." />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="portfolio scénographie, projets événementiels Belgique, réalisations festivals clubs, décoration événementielle Bruxelles" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.gribouille-eventlab.be/projects.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Gribouille Event Lab" />
+  <meta property="og:locale"      content="fr_BE" />
+  <meta property="og:url"         content="https://www.gribouille-eventlab.be/projects.html" />
+  <meta property="og:title"       content="Projets — Gribouille Event Lab | Portfolio Scénographie Événementielle" />
+  <meta property="og:description" content="Portfolio de réalisations en scénographie immersive : festivals, clubs, bars et collectifs à Bruxelles et en Belgique. Découvrez nos projets de décoration événementielle." />
+  <meta property="og:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"   content="Gribouille Event Lab — Scénographie événementielle Bruxelles" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gribouille_event_lab" />
+  <meta name="twitter:title"       content="Projets — Gribouille Event Lab | Portfolio Scénographie Événementielle" />
+  <meta name="twitter:description" content="Portfolio de réalisations en scénographie immersive : festivals, clubs, bars et collectifs à Bruxelles et en Belgique. Découvrez nos projets de décoration événementielle." />
+  <meta name="twitter:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Fira+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Données projets -->
+  <script src="js/projects-data.js"></script>
+
+  <!-- Données ticker -->
+  <script src="js/ticker-data.js"></script>
+
+  <!-- ★ Styles partagés -->
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://www.gribouille-eventlab.be/projects.html",
+    "url": "https://www.gribouille-eventlab.be/projects.html",
+    "name": "Portfolio — Gribouille Event Lab",
+    "description": "Portfolio de projets de scénographie événementielle réalisés par Gribouille Event Lab à Bruxelles et en Belgique.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://www.gribouille-eventlab.be/#website"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div id="header-root"></div>
+
+  <main>
+
+  <!-- ══════════════════════════════════════
+       PAGE HERO
+       → Modifier le titre h1 et le sous-titre
+       → Mettre à jour le compteur projCount
+  ═══════════════════════════════════════ -->
+  <section class="page-hero">
+    <canvas id="page-canvas"></canvas>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="label" id="proj-hero-label">Travaux Sélectionnés</p>
+      <div class="page-hero-inner">
+        <h1 id="proj-hero-title">
+          Des Projets<br>
+          Qui <span class="hl">Comptent.</span>
+        </h1>
+        <div class="page-hero-meta reveal">
+          <div class="page-hero-count" id="projCount">09</div>
+          <p id="proj-hero-meta">Installations réalisées pour festivals, clubs, bars &amp; collectifs — Belgique &amp; au-delà.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BARRE DE FILTRE
+       → Ajouter des .filter-btn pour de nouvelles catégories.
+         La valeur data-filter doit correspondre à data-cat sur les cartes.
+  ═══════════════════════════════════════ -->
+  <div class="filter-bar">
+    <div class="container">
+      <div class="filter-inner" id="filterInner">
+        <span class="filter-label">Filtrer par</span>
+        <!-- Boutons générés automatiquement depuis projects-data.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       GRILLE PROJETS
+  ═══════════════════════════════════════ -->
+  <section class="projects-section">
+    <div class="container">
+      <!-- Cartes générées automatiquement depuis projects-data.js -->
+      <div class="proj-grid reveal-stagger" id="projGrid"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2 id="proj-cta-title">Votre Projet<br>a sa Place Ici.</h2>
+      <p id="proj-cta-desc">Chaque espace de ce portfolio a commencé par une conversation. Démarrons la vôtre.</p>
+      <a href="contact.html" class="btn" id="proj-cta-btn">Démarrer un Projet</a>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  </main>
+
+  <!-- ══ Rendu depuis projects-data.js ══ -->
+  <script>
+    (function () {
+      // 1. Boutons filtre — générés depuis les catégories du tableau PROJECTS
+      const filterInner = document.getElementById('filterInner');
+      const label = filterInner.querySelector('.filter-label');
+      filterInner.innerHTML = '';
+      filterInner.appendChild(label);
+
+      const cats = ['all', ...new Set(PROJECTS.map(p => p.cat))];
+      cats.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn' + (cat === 'all' ? ' active' : '');
+        btn.dataset.filter = cat;
+        btn.textContent = cat === 'all' ? 'Tout' : (CATEGORY_LABELS[cat] || cat.charAt(0).toUpperCase() + cat.slice(1));
+        filterInner.appendChild(btn);
+      });
+
+      // 2. Compteur
+      const countEl = document.getElementById('projCount');
+      if (countEl) countEl.textContent = String(PROJECTS.length).padStart(2, '0');
+
+      // 3. Cartes projets (du plus récent au plus ancien)
+      const grid = document.getElementById('projGrid');
+      const projectsSorted = [...PROJECTS].reverse();
+      grid.innerHTML = projectsSorted.map(p => {
+        const catLabel = CATEGORY_LABELS[p.cat] || (p.cat.charAt(0).toUpperCase() + p.cat.slice(1));
+        return `
+          <a href="project-detail.html?id=${p.id}" class="proj-card reveal-child"
+             data-cat="${p.cat}">
+            <img src="${p.img}" alt="${p.imgAlt}" loading="lazy" />
+            <div class="proj-ov">
+              <p class="proj-cat">${catLabel}</p>
+              <p class="proj-year-tag">${p.year}</p>
+              <p class="proj-title">${p.title}</p>
+              <p class="proj-desc">${p.desc}</p>
+              <span class="proj-link-cta">Voir le projet →</span>
+            </div>
+          </a>`;
+      }).join('');
+    })();
+  </script>
+
+  <!-- ★ Scripts partagés -->
+  <script src="js/layout-data.js"></script>
+  <script src="js/pages-data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/shared.js" defer></script>
+
+<!-- ── Injection pages-data.js › Projets ── -->
+<script>
+(function () {
+  if (typeof PAGES_DEFAULTS === 'undefined' || !PAGES_DEFAULTS.projects || !PAGES_DEFAULTS.projects.hero) return;
+  const h = PAGES_DEFAULTS.projects.hero;
+  const lbl = document.getElementById('proj-hero-label');
+  if (lbl && h.label) lbl.textContent = h.label;
+  const ttl = document.getElementById('proj-hero-title');
+  if (ttl && h.titleHtml) ttl.innerHTML = h.titleHtml;
+  const meta = document.getElementById('proj-hero-meta');
+  if (meta && h.metaDesc) meta.textContent = h.metaDesc;
+
+  // CTA strip
+  const c = PAGES_DEFAULTS.projects.cta;
+  if (c) {
+    const ctaTitle = document.getElementById('proj-cta-title');
+    if (ctaTitle && c.titleHtml) ctaTitle.innerHTML = c.titleHtml;
+    const ctaDesc = document.getElementById('proj-cta-desc');
+    if (ctaDesc && c.desc) ctaDesc.textContent = c.desc;
+    const ctaBtn = document.getElementById('proj-cta-btn');
+    if (ctaBtn) { if (c.btnLabel) ctaBtn.textContent = c.btnLabel; if (c.btnHref) ctaBtn.href = c.btnHref; }
+  }
+})();
+</script>
+
+</body>
+</html>
