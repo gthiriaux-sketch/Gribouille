@@ -264,8 +264,8 @@ const PROJECTS = [
       { src: "img/projects/vectorworks--stage/Sans_Titre_21.webp", alt: "Sans_Titre_21", caption: "" },
       { src: "img/projects/vectorworks--stage/Sans_Titre13.webp", alt: "Sans_Titre13", caption: "" },
     ],
-    model3d: "img/projects//vectorworks--stage/model.glb",
-    plans: "img/projects//vectorworks--stage/plan.pdf",
+    model3d: "img/projects//vectorworks-stage/model.glb",
+    plans: "img/projects//vectorworks-stage/plan.pdf",
   }
 
 ];
