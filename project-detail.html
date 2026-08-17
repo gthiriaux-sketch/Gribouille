@@ -47,7 +47,7 @@
   <link rel="stylesheet" href="css/project-detail.css" />
 
   <!-- model-viewer (3D) -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -354,7 +354,7 @@
       const viewer3dSection = document.getElementById('viewer3d-section');
       const modelViewerEl   = document.getElementById('model-viewer-el');
       if (p.model3d && viewer3dSection && modelViewerEl) {
-        modelViewerEl.setAttribute('src', '/' + p.model3d);
+        modelViewerEl.setAttribute('src',p.model3d);
         modelViewerEl.setAttribute('environment-image', 'neutral');
         viewer3dSection.style.display = '';
       }
@@ -474,7 +474,7 @@
         fd.append('Email',   email);
         fd.append('Société', societe || '—');
         fd.append('Projet',  window._plansProjectTitle || window._plansProjectId || '');
-        await fetch('https://formspree.io/f/xkopgoyb', {
+        await fetch('https://formspree.io/f/xyknrdnl', {
           method: 'POST', body: fd,
           headers: { 'Accept': 'application/json' },
         });
@@ -483,7 +483,7 @@
         files.forEach((filePath, i) => {
           setTimeout(() => {
             const a = document.createElement('a');
-            a.href     = '/' + filePath;
+            a.href     = filePath;
             a.download = filePath.split('/').pop();
             document.body.appendChild(a);
             a.click();
