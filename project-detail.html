@@ -467,8 +467,10 @@
       const btn = document.querySelector('.plans-modal-submit');
       if (btn) { btn.disabled = true; btn.textContent = 'En cours…'; }
 
-      // 1. Envoyer les infos à Formspree — ne doit JAMAIS bloquer le téléchargement.
-      //    Si Formspree échoue (CORS, domaine non vérifié, réseau...), on continue quand même.
+      // 1. Envoyer les infos à Formspree EN ARRIÈRE-PLAN (pas de "await").
+      //    Si un bloqueur de pub/traqueurs (uBlock, etc.) bloque silencieusement
+      //    formspree.io, un "await" resterait bloqué indéfiniment sans jamais
+      //    réussir ni échouer — c'est ce qui coinçait le bouton sur "En cours…".
       try {
         const fd = new FormData();
         fd.append('Prénom',  prenom);
@@ -476,17 +478,21 @@
         fd.append('Email',   email);
         fd.append('Société', societe || '—');
         fd.append('Projet',  window._plansProjectTitle || window._plansProjectId || '');
-        await fetch('https://formspree.io/f/xkopgoyb', {
+        fetch('https://formspree.io/f/xkopgoyb', {
           method: 'POST',
           body: fd,
           headers: { 'Accept': 'application/json' },
-        });
+        }).catch(e => console.warn('Formspree indisponible (notification email non envoyée) :', e));
       } catch (e) {
-        console.warn('Formspree indisponible (l\'envoi de la notification a échoué), on continue quand même le téléchargement :', e);
+        console.warn('Erreur lors de la préparation de l\'envoi Formspree :', e);
       }
 
-      // 2. Télécharger les fichiers plans directement (chemin relatif, pas de '/' en préfixe)
+      // 2. Télécharger les fichiers plans immédiatement, sans attendre Formspree
+      //    (chemins relatifs, pas de '/' en préfixe).
       const files = window._plansFiles || [];
+      if (!files.length) {
+        console.warn('Aucun fichier de plans défini pour ce projet (p.plans est vide dans projects-data.js).');
+      }
       files.forEach((filePath, i) => {
         setTimeout(() => {
           const a = document.createElement('a');
@@ -498,7 +504,7 @@
         }, i * 400); // petit délai entre chaque téléchargement
       });
 
-      // 3. Afficher l'écran de succès (toujours, indépendamment de Formspree)
+      // 3. Afficher l'écran de succès tout de suite
       document.getElementById('plans-modal-form').style.display = 'none';
       document.getElementById('plans-modal-success').style.display = '';
       if (btn) { btn.disabled = false; btn.textContent = '⬇ Télécharger les plans'; }
