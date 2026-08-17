@@ -1,41 +1,550 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet — Gribouille Event Lab</title>
+  <meta id="meta-desc" name="description" content="" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="projet scénographie, réalisation événementielle, Gribouille Event Lab portfolio" />
 
-  <url>
-    <loc>https://www.gribouille-eventlab.be/</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr-be" href="https://www.gribouille-eventlab.be/"/>
-  </url>
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.gribouille-eventlab.be/projects.html" />
 
-  <url>
-    <loc>https://www.gribouille-eventlab.be/about.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Gribouille Event Lab" />
+  <meta property="og:locale"      content="fr_BE" />
+  <meta property="og:url"         content="https://www.gribouille-eventlab.be/projects.html" />
+  <meta property="og:title"       content="Nos Projets — Gribouille Event Lab" />
+  <meta property="og:description" content="Découvrez en détail nos réalisations en scénographie événementielle à Bruxelles — festivals, clubs, bars, installations immersives." />
+  <meta property="og:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"   content="Gribouille Event Lab — Scénographie événementielle Bruxelles" />
 
-  <url>
-    <loc>https://www.gribouille-eventlab.be/services.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gribouille_event_lab" />
+  <meta name="twitter:title"       content="Nos Projets — Gribouille Event Lab" />
+  <meta name="twitter:description" content="Découvrez en détail nos réalisations en scénographie événementielle à Bruxelles — festivals, clubs, bars, installations immersives." />
+  <meta name="twitter:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
 
-  <url>
-    <loc>https://www.gribouille-eventlab.be/projects.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
 
-  <url>
-    <loc>https://www.gribouille-eventlab.be/contact.html</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Données projets -->
+  <script src="js/projects-data.js"></script>
 
-</urlset>
+  <!-- Données ticker -->
+  <script src="js/ticker-data.js"></script>
+
+  <!-- ★ Styles partagés -->
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/project-detail.css" />
+
+  <!-- model-viewer (3D) -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <div id="header-root"></div>
+
+  <main>
+
+  <!-- ══ HERO FULLSCREEN ══ -->
+  <section class="proj-hero">
+    <img id="hero-img" class="proj-hero-img" src="" alt="Projet de scénographie événementielle — Gribouille Event Lab" />
+    <canvas id="hero-canvas"></canvas>
+    <span id="hero-ghost" class="proj-hero-ghost" aria-hidden="true"></span>
+
+    <div class="proj-hero-inner">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          
+          <span id="breadcrumb-title"></span>
+        </nav>
+
+        <div class="proj-hero-meta-row">
+          <span id="hero-cat" class="proj-hero-cat"></span>
+          <span id="hero-year" class="proj-hero-year"></span>
+        </div>
+
+        <h1 id="hero-title" class="proj-hero-title reveal"></h1>
+
+        <div id="hero-tags" class="proj-hero-tags reveal"></div>
+
+        <div id="plans-btn-wrap" style="display:none;margin-top:1.5rem">
+          <button class="btn btn--accent" onclick="openPlansModal()">📐 Demander les plans</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS STRIP ══ -->
+  <div class="stats-strip" aria-label="Chiffres clés">
+    <div class="container">
+      <div class="stats-inner" id="stats-inner">
+        <!-- Généré par JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CORPS DE PAGE ══ -->
+  <section class="proj-body">
+    <div class="container">
+      <div class="proj-body-grid">
+
+        <!-- Colonne texte -->
+        <div class="proj-content">
+          <p class="section-label">Le Projet</p>
+          <h2 id="proj-subtitle" class="reveal"></h2>
+          <div id="proj-body-text" class="reveal"></div>
+
+          <blockquote id="pull-quote-block" class="pull-quote reveal" style="display:none">
+            <p id="pull-quote-text"></p>
+            <cite id="pull-quote-cite"></cite>
+          </blockquote>
+
+          <div class="reveal" style="margin-top:3rem;">
+            <p class="section-label">Prestations</p>
+            <ul id="services-list" class="services-list"></ul>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="proj-sidebar">
+          <div class="sidebar-block reveal">
+            <h3>Fiche projet</h3>
+            <div class="sidebar-kv">
+              <div class="kv-row"><span class="kv-key">Client</span>    <span id="sb-client"  class="kv-val"></span></div>
+              <div class="kv-row"><span class="kv-key">Lieu</span>      <span id="sb-lieu"    class="kv-val"></span></div>
+              <div class="kv-row"><span class="kv-key">Date</span>      <span id="sb-date"    class="kv-val"></span></div>
+              <div class="kv-row"><span class="kv-key">Durée</span>     <span id="sb-duree"   class="kv-val"></span></div>
+              <div class="kv-row"><span class="kv-key">Catégorie</span> <span id="sb-cat"     class="kv-val"></span></div>
+              <div class="kv-row"><span class="kv-key">Surface</span>   <span id="sb-surface" class="kv-val"></span></div>
+            </div>
+          </div>
+
+          <div class="sidebar-block sidebar-cta reveal">
+            <h3>Un Projet Similaire ?</h3>
+            <p>Parlons-en. Chaque espace est unique — et notre approche l'est tout autant.</p>
+            <a href="contact.html" class="btn btn--accent">Démarrer un Projet</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALERIE ══ -->
+  <section id="gallery-section" class="gallery-section">
+    <div class="container">
+      <p class="section-label reveal">Galerie</p>
+      <h2 class="reveal">Sous tous<br>les <span style="position:relative;display:inline-block;">angles<span style="position:absolute;bottom:4px;left:0;width:100%;height:8px;background:var(--accent);z-index:-1;"></span></span>.</h2>
+
+      <div id="gallery-grid" class="gallery-grid reveal-stagger">
+        <!-- Généré par JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VISUALISEUR 3D ══ -->
+  <section id="viewer3d-section" class="viewer3d-section" style="display:none">
+    <div class="container">
+      <p class="section-label reveal">Modèle 3D</p>
+      <h2 class="reveal">Explorez en<br><span style="position:relative;display:inline-block;">3 dimensions<span style="position:absolute;bottom:4px;left:0;width:100%;height:8px;background:var(--accent);z-index:-1;opacity:.6;"></span></span>.</h2>
+      <div class="viewer3d-wrap">
+        <model-viewer
+          id="model-viewer-el"
+          camera-controls
+          auto-rotate
+          auto-rotate-delay="500"
+          rotation-per-second="20deg"
+          shadow-intensity="1"
+          shadow-softness="0.8"
+          exposure="1"
+          tone-mapping="commerce"
+        ></model-viewer>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <!-- ══ NAVIGATION PROJET (Précédent / Suivant) ══ -->
+  <nav class="proj-nav" aria-label="Navigation entre projets">
+    <div class="container">
+      <div class="proj-nav-inner">
+        <a id="nav-prev" href="#" class="proj-nav-link prev" style="display:none">
+          <span class="proj-nav-dir">← Précédent</span>
+          <span id="nav-prev-title" class="proj-nav-title"></span>
+          <span id="nav-prev-cat"   class="proj-nav-cat"></span>
+        </a>
+        <div></div><!-- spacer si pas de prev -->
+        <a id="nav-next" href="#" class="proj-nav-link next" style="display:none">
+          <span class="proj-nav-dir">Suivant →</span>
+          <span id="nav-next-title" class="proj-nav-title"></span>
+          <span id="nav-next-cat"   class="proj-nav-cat"></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Votre Projet<br>Commence Ici.</h2>
+      <p>Chaque espace de ce portfolio a commencé par une conversation. Démarrons la vôtre.</p>
+      <a href="contact.html" class="btn">Nous Contacter</a>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  </main>
+
+  <!-- ══ LIGHTBOX ══ -->
+  <div id="lightbox" class="lightbox" onclick="if(event.target===this)closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-prev" onclick="lightboxNav(-1)">‹</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Image du projet">
+    <button class="lightbox-next" onclick="lightboxNav(1)">›</button>
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+    <div id="lightbox-counter" class="lightbox-counter"></div>
+  </div>
+
+  <!-- ══ MODAL PLANS ══ -->
+  <div id="plans-modal" class="plans-modal-overlay" onclick="if(event.target===this)closePlansModal()">
+    <div class="plans-modal-box">
+      <button onclick="closePlansModal()" class="plans-modal-close">✕</button>
+      <h3>Demander les plans</h3>
+      <p id="plans-modal-project-name" class="plans-modal-subtitle"></p>
+      <div id="plans-modal-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem">
+          <div>
+            <label class="plans-modal-label">Prénom *</label>
+            <input id="pr-prenom" class="plans-modal-input" placeholder="Jean">
+          </div>
+          <div>
+            <label class="plans-modal-label">Nom *</label>
+            <input id="pr-nom" class="plans-modal-input" placeholder="Dupont">
+          </div>
+        </div>
+        <div style="margin-bottom:.75rem">
+          <label class="plans-modal-label">Email *</label>
+          <input id="pr-email" type="email" class="plans-modal-input" placeholder="jean.dupont@exemple.com">
+        </div>
+        <div style="margin-bottom:1.5rem">
+          <label class="plans-modal-label">Société</label>
+          <input id="pr-societe" class="plans-modal-input" placeholder="Votre société">
+        </div>
+        <button class="plans-modal-submit" onclick="submitPlansRequest()">⬇ Télécharger les plans</button>
+      </div>
+      <div id="plans-modal-success" style="display:none;text-align:center;padding:1.5rem 0">
+        <div style="font-size:2.5rem;margin-bottom:.75rem">✓</div>
+        <p style="font-weight:800;font-family:var(--f-head,sans-serif);margin:0 0 .5rem;color:var(--ink,#12021E)">Téléchargement lancé !</p>
+        <p style="font-size:.85rem;opacity:.6;margin:0;color:var(--ink,#12021E)">Vos fichiers sont en cours de téléchargement.</p>
+        <button onclick="closePlansModal()" style="margin-top:1.25rem;padding:.6rem 1.5rem;background:none;border:2px solid var(--ink,#12021E);border-radius:4px;cursor:pointer;color:var(--ink,#12021E);font-family:var(--f-head,sans-serif);font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ Rendu depuis projects-data.js ══ -->
+  <script>
+    (function () {
+      // Lire l'id dans l'URL (?id=scene-laterale-festival)
+      const params = new URLSearchParams(location.search);
+      const id     = params.get('id');
+      const idx    = PROJECTS.findIndex(p => p.id === id);
+      const p      = idx >= 0 ? PROJECTS[idx] : PROJECTS[0];
+
+      const catLabel = CATEGORY_LABELS[p.cat] || (p.cat.charAt(0).toUpperCase() + p.cat.slice(1));
+
+      // Titre de l'onglet
+      document.title = p.title + ' · Gribouille Event Lab';
+      document.getElementById('meta-desc').content = p.desc;
+
+      // Hero image
+      const heroImg = document.getElementById('hero-img');
+      heroImg.src = p.img;
+      heroImg.alt = p.imgAlt;
+
+      // Mot fantôme (premier segment avant le tiret, ou tout le titre)
+      document.getElementById('hero-ghost').textContent = p.cat
+
+      // Breadcrumb
+      document.getElementById('breadcrumb-title').textContent = p.breadcrumb;
+
+      // Catégorie + année
+      document.getElementById('hero-cat').textContent  = catLabel;
+      document.getElementById('hero-year').textContent = p.year;
+
+      // Titre hero — mot après "—" mis en valeur
+      const parts = p.title.split('—');
+      document.getElementById('hero-title').innerHTML = parts.length > 1
+        ? `${parts[0].trim()} —<br><span class="hl">${parts[1].trim()}</span>`
+        : `<span class="hl">${p.title}</span>`;
+
+      // Tags
+      document.getElementById('hero-tags').innerHTML = (p.tags || [])
+        .map(t => `<span class="proj-tag">${t}</span>`).join('');
+
+      // Stats
+      const statsEl = document.getElementById('stats-inner');
+      if (p.stats && p.stats.length) {
+        statsEl.innerHTML = p.stats.map(s => `
+          <div class="stat-item reveal">
+            <span class="stat-num">${s.num}</span>
+            <span class="stat-label">${s.label}</span>
+          </div>`).join('');
+        statsEl.closest('.stats-strip').style.display = '';
+      } else {
+        statsEl.closest('.stats-strip').style.display = 'none';
+      }
+
+      // Texte principal
+      document.getElementById('proj-subtitle').textContent = p.subtitle || p.title;
+      document.getElementById('proj-body-text').innerHTML  = p.body || '<p>Description à renseigner.</p>';
+
+      // Citation
+      const quoteBlock = document.getElementById('pull-quote-block');
+      if (p.quote) {
+        document.getElementById('pull-quote-text').textContent = '\u201C' + p.quote.text + '\u201D';
+        document.getElementById('pull-quote-cite').textContent = '— ' + p.quote.cite;
+        quoteBlock.style.display = '';
+      } else {
+        quoteBlock.style.display = 'none';
+      }
+
+      // Prestations
+      document.getElementById('services-list').innerHTML = (p.services || [])
+        .map(s => `<li>${s}</li>`).join('');
+
+      // Sidebar
+      document.getElementById('sb-client').textContent  = p.client  || '—';
+      document.getElementById('sb-lieu').textContent    = p.lieu    || '—';
+      document.getElementById('sb-date').textContent    = p.date    || '—';
+      document.getElementById('sb-duree').textContent   = p.duree   || '—';
+      document.getElementById('sb-cat').textContent     = catLabel;
+      document.getElementById('sb-surface').textContent = p.surface || '—';
+
+      // Galerie
+      const galleryGrid = document.getElementById('gallery-grid');
+      const imgs = (p.gallery && p.gallery.length > 0)
+        ? p.gallery
+        : [{ src: p.img, alt: p.imgAlt, caption: p.title }];
+
+      window._galleryImgs = imgs;
+      galleryGrid.innerHTML = imgs.map((g, i) => `
+        <div class="gallery-item reveal-child" onclick="openLightbox(${i})" style="cursor:zoom-in">
+          <img src="${g.src}" alt="${g.alt}" loading="lazy" />
+          <div class="gallery-caption"><span>${g.caption || ''}</span></div>
+        </div>`).join('');
+
+      // 3D model viewer
+      const viewer3dSection = document.getElementById('viewer3d-section');
+      const modelViewerEl   = document.getElementById('model-viewer-el');
+      if (p.model3d && viewer3dSection && modelViewerEl) {
+        modelViewerEl.setAttribute('src', p.model3d);
+        modelViewerEl.setAttribute('environment-image', 'neutral');
+        viewer3dSection.style.display = '';
+      }
+
+      // Plans request button
+      const plansBtnWrap = document.getElementById('plans-btn-wrap');
+      if (p.plans && p.plans.length && plansBtnWrap) {
+        plansBtnWrap.style.display = '';
+      }
+
+      // Store project info for modal
+      window._plansProjectId    = p.id;
+      window._plansProjectTitle = p.title;
+      window._plansFiles        = Array.isArray(p.plans) ? p.plans : (p.plans ? [p.plans] : []);
+      const plansModalName = document.getElementById('plans-modal-project-name');
+      if (plansModalName) plansModalName.textContent = p.title;
+
+      // Navigation précédent / suivant
+      const prev = idx > 0                    ? PROJECTS[idx - 1] : null;
+      const next = idx < PROJECTS.length - 1  ? PROJECTS[idx + 1] : null;
+
+      const prevLink = document.getElementById('nav-prev');
+      const nextLink = document.getElementById('nav-next');
+
+      if (prev) {
+        prevLink.href = 'project-detail.html?id=' + prev.id;
+        document.getElementById('nav-prev-title').innerHTML = prev.title.replace(' — ', '<br>');
+        document.getElementById('nav-prev-cat').textContent = CATEGORY_LABELS[prev.cat] || prev.cat;
+        prevLink.style.display = '';
+      }
+      if (next) {
+        nextLink.href = 'project-detail.html?id=' + next.id;
+        document.getElementById('nav-next-title').innerHTML = next.title.replace(' — ', '<br>');
+        document.getElementById('nav-next-cat').textContent = CATEGORY_LABELS[next.cat] || next.cat;
+        nextLink.style.display = '';
+      }
+
+      // Supprimer le spacer si prev existe
+      if (prev) {
+        const spacer = prevLink.nextElementSibling;
+        if (spacer && spacer.tagName === 'DIV') spacer.remove();
+      }
+    })();
+  </script>
+
+  <script>
+    /* ── Lightbox ── */
+    let _lbIdx = 0;
+
+    function openLightbox(idx) {
+      const imgs = window._galleryImgs || [];
+      if (!imgs.length) return;
+      _lbIdx = idx;
+      _renderLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function lightboxNav(dir) {
+      const imgs = window._galleryImgs || [];
+      _lbIdx = (_lbIdx + dir + imgs.length) % imgs.length;
+      _renderLightbox();
+    }
+
+    function _renderLightbox() {
+      const imgs = window._galleryImgs || [];
+      const g    = imgs[_lbIdx];
+      if (!g) return;
+      const el = document.getElementById('lightbox-img');
+      el.style.opacity = '0';
+      el.onload = () => { el.style.opacity = '1'; };
+      el.src = g.src;
+      el.alt = g.alt || '';
+      document.getElementById('lightbox-caption').textContent = g.caption || '';
+      document.getElementById('lightbox-counter').textContent = `${_lbIdx + 1} / ${imgs.length}`;
+    }
+
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowRight')  lightboxNav(1);
+      if (e.key === 'ArrowLeft')   lightboxNav(-1);
+    });
+
+    function openPlansModal() {
+      document.getElementById('plans-modal').classList.add('open');
+      document.getElementById('plans-modal-form').style.display = '';
+      document.getElementById('plans-modal-success').style.display = 'none';
+      document.getElementById('pr-prenom').value = '';
+      document.getElementById('pr-nom').value = '';
+      document.getElementById('pr-email').value = '';
+      document.getElementById('pr-societe').value = '';
+    }
+
+    function closePlansModal() {
+      document.getElementById('plans-modal').classList.remove('open');
+    }
+
+    async function submitPlansRequest() {
+      const prenom  = document.getElementById('pr-prenom').value.trim();
+      const nom     = document.getElementById('pr-nom').value.trim();
+      const email   = document.getElementById('pr-email').value.trim();
+      const societe = document.getElementById('pr-societe').value.trim();
+      if (!prenom || !nom || !email) { alert('Prénom, nom et email sont obligatoires.'); return; }
+      const btn = document.querySelector('.plans-modal-submit');
+      if (btn) { btn.disabled = true; btn.textContent = 'En cours…'; }
+
+      // 1. Envoyer les infos à Formspree EN ARRIÈRE-PLAN (pas de "await").
+      //    Si un bloqueur de pub/traqueurs (uBlock, etc.) bloque silencieusement
+      //    formspree.io, un "await" resterait bloqué indéfiniment sans jamais
+      //    réussir ni échouer — c'est ce qui coinçait le bouton sur "En cours…".
+      try {
+        const fd = new FormData();
+        fd.append('Prénom',  prenom);
+        fd.append('Nom',     nom);
+        fd.append('Email',   email);
+        fd.append('Société', societe || '—');
+        fd.append('Projet',  window._plansProjectTitle || window._plansProjectId || '');
+        fetch('https://formspree.io/f/xkopgoyb', {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' },
+        }).catch(e => console.warn('Formspree indisponible (notification email non envoyée) :', e));
+      } catch (e) {
+        console.warn('Erreur lors de la préparation de l\'envoi Formspree :', e);
+      }
+
+      // 2. Télécharger les fichiers plans immédiatement, sans attendre Formspree
+      //    (chemins relatifs, pas de '/' en préfixe).
+      const files = window._plansFiles || [];
+      if (!files.length) {
+        console.warn('Aucun fichier de plans défini pour ce projet (p.plans est vide dans projects-data.js).');
+      }
+      files.forEach((filePath, i) => {
+        setTimeout(() => {
+          const a = document.createElement('a');
+          a.href     = filePath;
+          a.download = filePath.split('/').pop();
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }, i * 400); // petit délai entre chaque téléchargement
+      });
+
+      // 3. Afficher l'écran de succès tout de suite
+      document.getElementById('plans-modal-form').style.display = 'none';
+      document.getElementById('plans-modal-success').style.display = '';
+      if (btn) { btn.disabled = false; btn.textContent = '⬇ Télécharger les plans'; }
+    }
+  </script>
+
+  <!-- ★ Scripts partagés -->
+  <script src="js/components.js"></script>
+  <script src="js/shared.js" defer></script>
+
+  <!-- Canvas Rough.js — tracés décoratifs sur le hero -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas || typeof rough === 'undefined') return;
+
+      function draw() {
+        canvas.width  = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        const rc = rough.canvas(canvas);
+        const w  = canvas.width;
+        const h  = canvas.height;
+
+        const opts = {
+          stroke: 'rgba(255,254,240,1)',
+          strokeWidth: 1.2,
+          roughness: 2.4,
+          bowing: 1.8,
+        };
+
+        rc.line(w * .72, 0,     w * .95, h * .35, opts);
+        rc.line(w * .85, 0,     w,       h * .5,  opts);
+        rc.line(0,        h*.1, w * .18, h * .85, opts);
+        rc.rectangle(w * .05, h * .12, w * .22, h * .18, { ...opts, fillStyle: 'none' });
+      }
+
+      window.addEventListener('load',   draw);
+      window.addEventListener('resize', draw);
+    })();
+  </script>
+
+</body>
+</html>
