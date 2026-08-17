@@ -54,8 +54,8 @@ const PROJECTS = [
       { src: "img/projects/scene-festival/Chateau6.webp", alt: "Chateau6", caption: "" },
       { src: "img/projects/scene-festival/Chateau7.webp", alt: "Chateau7", caption: "" },
     ],
-    model3d: "img/projects/scene-festival/model/model.glb",
-    plans: [],
+    model3d: "img/projects/scene-festival/model.glb",
+    plans: "img/projects/scene-festival/plan.pdf",
   },
 
   {
@@ -108,8 +108,8 @@ const PROJECTS = [
       { src: "img/projects/totems-lumineux-festival/Tour6.webp", alt: "Tour6", caption: "" },
       { src: "img/projects/totems-lumineux-festival/Tour7.webp", alt: "Tour7", caption: "" },
     ],
-    model3d: "img/projects/totems-lumineux-festival/model/model.glb",
-    plans: [],
+    model3d: "img/projects/totems-lumineux-festival/model.glb",
+    plans: "img/projects/totems-lumineux-festival/plan.pdf",
   },
 
   {
@@ -161,8 +161,8 @@ const PROJECTS = [
       { src: "img/projects/scene-collectif-ecologique/Pirate5.webp", alt: "Pirate5", caption: "" },
       { src: "img/projects/scene-collectif-ecologique/Pirate6.webp", alt: "Pirate6", caption: "" },
     ],
-    model3d: "img/projects/scene-collectif-ecologique/model/model.glb",
-    plans: [],
+    model3d: "img/projects/scene-collectif-ecologique/model.glb",
+    plans: "img/projects/scene-collectif-ecologique/plan.pdf",
   },
 
   {
@@ -264,8 +264,8 @@ const PROJECTS = [
       { src: "img/projects/vectorworks--stage/Sans_Titre_21.webp", alt: "Sans_Titre_21", caption: "" },
       { src: "img/projects/vectorworks--stage/Sans_Titre13.webp", alt: "Sans_Titre13", caption: "" },
     ],
-    model3d: "",
-    plans: [],
+    model3d: "img/projects//vectorworks--stage/model.glb",
+    plans: "img/projects//vectorworks--stage/plan.pdf",
   }
 
 ];
