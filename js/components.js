@@ -39,7 +39,7 @@
 
   /* ── Footer ──────────────────────────────────────────────────────── */
   const _ftrDefaults = {
-    logo: 'img/media/logo/multi-blanc.webp',
+    logo: 'img/media/Logo/multi-blanc.webp',
     tagline: "Scénographie immersive pour clubs, festivals & événements. Du concept à l'installation — Bruxelles & au-delà.",
     copyright: '© 2025 Gribouille Event Lab — Bruxelles, Belgique',
     socials: [
