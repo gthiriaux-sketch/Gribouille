@@ -6,7 +6,7 @@
 
   /* ── Header ──────────────────────────────────────────────────────── */
   const _hdrDefaults = {
-    logo: 'img/logos/logo-header.webp',
+    logo: 'img/Media/logo/multi-noir.webp',
     links: [
       { label: 'Accueil', href: 'index.html' },
       { label: 'À Propos', href: 'about.html' },
