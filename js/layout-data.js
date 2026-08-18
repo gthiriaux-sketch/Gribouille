@@ -5,9 +5,9 @@
 ════════════════════════════════════════════════════════ */
 
 const LAYOUT_DEFAULTS = {
-  "favicon": "img/icones/IMG_8030_1_.webp",
+  "favicon": "img/icones/seul-blanc.webp",
   "header": {
-    "logo": "img/media/Logo/GRIBOUILLE_EVENT_LAB_7_.webp",
+    "logo": "img/media/Logo/multi-noir.webp",
     "links": [
       {
         "label": "Accueil",
