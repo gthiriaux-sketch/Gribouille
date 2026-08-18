@@ -470,7 +470,6 @@
       // 1. Envoyer les infos à Formspree EN ARRIÈRE-PLAN (pas de "await").
       //    Si un bloqueur de pub/traqueurs (uBlock, etc.) bloque silencieusement
       //    formspree.io, un "await" resterait bloqué indéfiniment sans jamais
-      //    réussir ni échouer — c'est ce qui coinçait le bouton sur "En cours…".
       try {
         const fd = new FormData();
         fd.append('Prénom',  prenom);
