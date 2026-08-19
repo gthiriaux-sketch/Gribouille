@@ -31,7 +31,7 @@ const PAGES_DEFAULTS = {
       ],
       "image1": "img/index/feature1.webp",
       "image1Alt": "L'équipe Gribouille Event Lab en train d'installer une scénographie",
-      "image2": "img//index/feature1.webp",
+      "image2": "img//index/feature2.webp",
       "image2Alt": "Public de festival sous une scénographie lumineuse immersive",
       "btnLabel": "Notre histoire",
       "btnHref": "about.html"
