@@ -12,7 +12,7 @@ const PROJECTS = [
     title:      "Main Stage Festival",
     breadcrumb: "Une scène atypique!",
     desc:       "Construction scénique complète pour une scène outdoor de 3 000 personnes — tours de truss, façades LED et vidéo mapping.",
-    img:        "img/projects/scene-festival/Chateau1.webp",
+    img:        "/projects/Chateau1.webp",
     imgAlt:     "Festival main stage scenography",
 
     tags: ["Scénographie","LED & Truss","Vidéo Mapping","3 000 pers.","Échafaudage"],
@@ -46,16 +46,16 @@ const PROJECTS = [
     ],
 
     gallery: [
-      { src: "img/projects/scene-festival/Chateau1.webp", alt: "Chateau1", caption: "" },
-      { src: "img/projects/scene-festival/Chateau2.webp", alt: "Chateau2", caption: "" },
-      { src: "img/projects/scene-festival/Chateau3.webp", alt: "Chateau3", caption: "" },
-      { src: "img/projects/scene-festival/Chateau4.webp", alt: "Chateau4", caption: "" },
-      { src: "img/projects/scene-festival/Chateau5.webp", alt: "Chateau5", caption: "" },
-      { src: "img/projects/scene-festival/Chateau6.webp", alt: "Chateau6", caption: "" },
-      { src: "img/projects/scene-festival/Chateau7.webp", alt: "Chateau7", caption: "" },
+      { src: "/projects/Chateau1.webp", alt: "Chateau1", caption: "" },
+      { src: "/projects/Chateau2.webp", alt: "Chateau2", caption: "" },
+      { src: "/projects/Chateau3.webp", alt: "Chateau3", caption: "" },
+      { src: "/projects/Chateau4.webp", alt: "Chateau4", caption: "" },
+      { src: "/projects/Chateau5.webp", alt: "Chateau5", caption: "" },
+      { src: "/projects/Chateau6.webp", alt: "Chateau6", caption: "" },
+      { src: "/projects/Chateau7.webp", alt: "Chateau7", caption: "" },
     ],
-    model3d: "img/projects/scene-festival/model.glb",
-    plans: ["img/projects/scene-festival/plan.pdf"],
+    model3d: "/projects/model.glb",
+    plans: ["/projects/plan.pdf"],
   },
 
   {
