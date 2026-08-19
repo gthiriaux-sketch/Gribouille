@@ -66,7 +66,7 @@ const PAGES_DEFAULTS = {
       "ctaHref": "projects.html",
       "images": [
         {
-          "src": "img/media/Image/jordon-conner-tIr-PWgSYB4-unsplash.webp",
+          "src": "img/about/hero.webp",
           "alt": "Gribouille Event Lab Logo"
         }
       ]
