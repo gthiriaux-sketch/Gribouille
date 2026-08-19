@@ -21,13 +21,13 @@ const SERVICES_DEFAULTS = [
       "Certification de sécurité et de charge, par un bureau d'étude externe.",
       "Constructions et installations temporaires ou permanentes",
     ],
-    image:       "img/projects/vectorworks--stage/Sans_Titre_1.webp",
+    image:       "img/services/feature1.webp",
     imageAlt:    "3D structure design for festival stage",
   },
   {
     title:       "Production Technique",
     text:        "Gestion technique complète du repérage à la validation finale — logistique, rigging, électrique et coordination d'équipes.",
-    icon:        "img/icones/IMG_8124.webp",
+    icon:        "img/icones/IMG_812.webp",
     showOnIndex: true,
     id:          "technical",
     label:       "Dans les Coulisses",
@@ -43,7 +43,7 @@ const SERVICES_DEFAULTS = [
       "Gestion du montage / démontage",
       "Documentation sécurité & conformité",
     ],
-    image:       "img/media/Image/20260327_130830.webp",
+    image:       "img/services/feature2.webp",
     imageAlt:    "Technical crew rigging festival stage",
   },
   {
@@ -63,7 +63,7 @@ const SERVICES_DEFAULTS = [
       "Identité visuelle de marque dans l'espace",
       "Forfaits maintenance et mise à jour disponibles",
     ],
-    image:       "img/media/Image/pexels-amelia-hallsworth-5461566.webp",
+    image:       "img/services/feature3.webp",
     imageAlt:    "Club interior installation and lighting",
   },
   {
@@ -83,7 +83,7 @@ const SERVICES_DEFAULTS = [
       "Planification budgétaire et phasage",
       "Coordination fournisseurs et partenaires",
     ],
-    image:       "img/media/DA/IMG_8081_1_.webp",
+    image:       "img/services/feature4.webp",
     imageAlt:    "Art direction moodboard and concept sketches",
   },
   {
@@ -103,7 +103,7 @@ const SERVICES_DEFAULTS = [
       "Accessoires scéniques et mobilier sur-mesure",
       "Fabrication de prototypes et pièces uniques",
     ],
-    image:       "img/media/Photos/IMG_9928.webp",
+    image:       "img/services/feature5.webp",
     imageAlt:    "Fabrication workshop — welding and woodwork",
   },
   {
@@ -122,7 +122,7 @@ const SERVICES_DEFAULTS = [
       "Transport & livraison sur site",
       "Logistique complète de l'événement",
     ],
-    image:       "img/media/Image/pexels-erik-debarre-2151386688-33890525.webp",
+    image:       "img/services/feature6.webp",
     imageAlt:    "Event management and logistics",
   },
 ];
