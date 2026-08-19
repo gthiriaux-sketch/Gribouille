@@ -11,7 +11,7 @@ const PAGES_DEFAULTS = {
       "description": "Studio de scénographie événementielle à Bruxelles. Conception et installation de décors pour festivals, clubs, soirées et événements privés. Du brief à l'installation — Belgique & Europe."
     },
     "hero": {
-      "image": "img/projects/scene-festival/Chateau1.webp",
+      "image": "img/index/hero.webp",
       "imageAlt": "Scénographie immersive de festival avec éclairage spectaculaire",
       "titleHtml": "On Crée<br>Des Univers<br><em>Dans Vos</em> <span class=\"hl\">Événements.</span>",
       "description": "Du premier croquis au dernier rigging — nous concevons et installons des espaces scénographiques pour festivals, clubs et événements qui marquent les esprits bien après l'extinction des feux.",
@@ -29,9 +29,9 @@ const PAGES_DEFAULTS = {
         "<em>Event Lab</em>, c'est notre promesse d'expérimenter, de tester, de construire autrement. On ne s'enferme pas dans des formules — on s'adapte à votre univers, à vos contraintes, à votre public.",
         "On intervient sur toute la Belgique, en combinant fabrication artisanale et expertise technique de pointe."
       ],
-      "image1": "img/media/Image/pexels-ron-lach-9616041.webp",
+      "image1": "img/index/feature1.webp",
       "image1Alt": "L'équipe Gribouille Event Lab en train d'installer une scénographie",
-      "image2": "img/media/Image/danny-howe-bn-D2bCvpik-unsplash.webp",
+      "image2": "img//index/feature1.webp",
       "image2Alt": "Public de festival sous une scénographie lumineuse immersive",
       "btnLabel": "Notre histoire",
       "btnHref": "about.html"
