@@ -326,7 +326,7 @@
  
 .client-logo-wrap { display: flex; align-items: center; }
 .client-logo {
-  height: 34px; max-width: 160px; width: auto;
+  height: 56px; max-width: 220px; width: auto;
   object-fit: contain;
   filter: grayscale(100%) opacity(.45);
   transition: filter .3s;
