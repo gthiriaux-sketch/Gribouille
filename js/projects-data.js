@@ -293,7 +293,7 @@ esperanzah! 2026
     cat:   "festival",
     year:  "2026",
 
-    title:      "esperanzah! 2026",
+    title:      "Esperanzah 2026",
     breadcrumb: "regisseur camping",
     desc:       "esperanzah 2026 Deco et Camping festif.",
     img:        "projects/espe26/1.webp",
