@@ -316,6 +316,13 @@ esperanzah! 2026
 
     subtitle: "Du métal, du bois et du cuivre.",
     body: `
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modèle de scène</title>
+</head>
+<body>
       <h2>esperanzah! — Du bois, des câbles et beaucoup de soleil</h2>
 
   <p>
@@ -346,6 +353,9 @@ esperanzah! 2026
     Une expérience de terrain qui résume assez bien l’esprit de <strong>Gribouille</strong> :
     <strong>mettre les mains dans le cambouis, trouver des solutions et transformer un terrain vide en un espace prêt à accueillir du public.</strong>
   </p>
+  
+</body>
+</html>
     `,
 
     quote: null,
