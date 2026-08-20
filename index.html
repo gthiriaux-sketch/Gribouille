@@ -7,10 +7,10 @@
   <meta name="description" content="Studio de scénographie événementielle à Bruxelles. Conception et installation de décors pour festivals, clubs, soirées et événements privés. Du brief à l'installation — Belgique & Europe." />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="scénographie événementielle Bruxelles, décoration festival Belgique, installation immersive, production technique événementielle, design lumière LED, studio créatif bruxellois" />
-
+ 
   <!-- Canonical -->
   <link rel="canonical" href="https://www.gribouille-eventlab.be/" />
-
+ 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="Gribouille Event Lab" />
@@ -22,49 +22,49 @@
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt"   content="Gribouille Event Lab — Scénographie événementielle Bruxelles" />
-
+ 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:site"        content="@gribouille_event_lab" />
   <meta name="twitter:title"       content="Gribouille Event Lab — Scénographie Événementielle Immersive | Bruxelles" />
   <meta name="twitter:description" content="Studio de scénographie événementielle à Bruxelles. Conception et installation de décors pour festivals, clubs, soirées et événements privés. Du brief à l'installation — Belgique & Europe." />
   <meta name="twitter:image"       content="https://www.gribouille-eventlab.be/img/og-cover.jpg" />
-
+ 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Fira+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
+ 
   <!-- Rough.js — gribouillis hand-drawn effect -->
   <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.min.js" defer></script>
   
   <!-- Données pages -->
   <script src="js/layout-data.js"></script>
   <script src="js/pages-data.js"></script>
-
+ 
   <!-- Données projets -->
   <script src="js/projects-data.js"></script>
-
+ 
   <!-- Données stats -->
   <script src="js/stats-data.js"></script>
-
+ 
   <!-- Données ticker -->
   <script src="js/ticker-data.js"></script>
-
+ 
   <!-- Données prestations -->
   <script src="js/services-data.js"></script>
-
+ 
   <!-- Données méthode -->
   <script src="js/methode-data.js"></script>
-
+ 
   <!-- Données clients -->
   <script src="js/clients-data.js"></script>
-
+ 
   <!-- ★ Styles partagés (variables, reset, nav, footer, utilitaires…) -->
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/home.css">
-
+ 
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -137,16 +137,16 @@
   </script>
 </head>
 <body>
-
+ 
   <div id="header-root"></div>
-
+ 
   <main>
-
+ 
   <!-- ══════════════════════════════════════
        HERO — FULLSCREEN SPECTACULAIRE
   ═══════════════════════════════════════ -->
   <section id="hero">
-
+ 
     <!-- Fond plein écran -->
     <div class="hero-bg">
       <img
@@ -156,17 +156,17 @@
         loading="eager"
       />
     </div>
-
+ 
     <!-- Canvas Rough.js -->
     <canvas id="hero-canvas"></canvas>
-
+ 
     <!-- Mot fantôme -->
     <span class="hero-ghost" aria-hidden="true">GRIBOUILLE</span>
-
+ 
     <!-- Contenu principal -->
     <div class="hero-inner">
       <div class="container">
-
+ 
         <div class="hero-body">
         <div class="hero-row">
             <div>
@@ -185,33 +185,33 @@
             </div>
           </div>
         </div>
-
+ 
         <!-- ── STATS STRIP ── (rendu dynamique via js/stats-data.js + localStorage) -->
         <div class="hero-stats" id="heroStats"></div>
         <!-- / .hero-stats -->
-
+ 
       </div>
     </div>
     <!-- / .hero-inner -->
-
+ 
     <span class="scroll-hint">Défiler</span>
-
+ 
   </section>
-
+ 
   <!-- ══════════════════════════════════════
        TICKER
   ═══════════════════════════════════════ -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track" id="tickerTrack"></div>
   </div>
-
+ 
   <!-- ══════════════════════════════════════
        ABOUT (aperçu)
   ═══════════════════════════════════════ -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
-
+ 
         <div class="about-imgs reveal">
           <img class="about-img about-img-a" id="about-img-a"
             src=""
@@ -220,7 +220,7 @@
             src=""
             alt="Public de festival sous une scénographie lumineuse immersive" loading="lazy" />
         </div>
-
+ 
         <div class="about-copy reveal">
           <p class="label" id="about-label">Qui sommes-nous</p>
           <h2 id="about-title">On dessine les idées,<br>puis on les construit.</h2>
@@ -232,11 +232,11 @@
           </div>
           <a href="about.html" class="btn" id="about-btn">Notre histoire</a>
         </div>
-
+ 
       </div>
     </div>
   </section>
-
+ 
   <!-- ══════════════════════════════════════
        SERVICES (aperçu)
   ═══════════════════════════════════════ -->
@@ -249,11 +249,11 @@
         </div>
         <a href="contact.html" class="btn">Lancer un projet</a>
       </div>
-
+ 
       <div class="services-grid reveal" id="services-grid"></div>
     </div>
   </section>
-
+ 
   <!-- ══════════════════════════════════════
        PROJETS (aperçu)
   ═══════════════════════════════════════ -->
@@ -261,17 +261,17 @@
     <div class="container">
       <p class="label">Réalisations sélectionnées</p>
       <h2>Des projets qui<br>parlent d'eux-mêmes.</h2>
-
+ 
       <div class="proj-grid reveal" id="home-projects"></div>
-
+ 
       </div>
-
+ 
       <div class="proj-footer">
         <a href="projects.html" class="btn btn--ghost">Voir tous nos projets</a>
       </div>
     </div>
   </section>
-
+ 
   <!-- ══════════════════════════════════════
        PROCESSUS
   ═══════════════════════════════════════ -->
@@ -279,11 +279,11 @@
     <div class="container">
       <p class="label">Notre méthode</p>
       <h2>Quatre étapes,<br>une seule vision.</h2>
-
+ 
       <div class="steps reveal" id="methode-steps"></div>
     </div>
   </section>
-
+ 
   <!-- ══════════════════════════════════════
        CLIENTS
   ═══════════════════════════════════════ -->
@@ -293,7 +293,7 @@
       <div class="clients-row" id="clients-row"></div>
     </div>
   </section>
-
+ 
   <!-- ══════════════════════════════════════
        CTA STRIP
   ═══════════════════════════════════════ -->
@@ -304,40 +304,40 @@
       <a href="contact.html" class="btn" id="idx-cta-btn">Parlons de votre projet →</a>
     </div>
   </section>
-
+ 
   <div id="footer-root"></div>
-
+ 
   </main>
-
+ 
   <!-- ★ Scripts partagés -->
   <script src="js/components.js"></script>
   <script src="js/shared.js"></script>
-
+ 
   <!-- ── Rough.js Hero ────────────────────── -->
   <script>
   function drawHeroScribbles() {
     const canvas = document.getElementById('hero-canvas');
     if (!canvas || typeof rough === 'undefined') return;
-
+ 
     const parent = document.getElementById('hero');
     canvas.width  = parent.offsetWidth;
     canvas.height = parent.offsetHeight;
-
+ 
     const rc   = rough.canvas(canvas);
     const w    = canvas.width;
     const h    = canvas.height;
     const seed = Math.floor(Math.random() * 900) + 1;
     const opt  = { stroke: 'rgba(255,254,240,1)', strokeWidth: 1.2, roughness: 2.8, seed };
-
+ 
     rc.line(w*.06, h*.08, w*.92, h*.14, opt);
     rc.line(w*.02, h*.28, w*.22, h*.88, opt);
     rc.line(w*.78, h*.04, w*.98, h*.72, opt);
     rc.line(w*.08, h*.92, w*.96, h*.84, opt);
   }
-
+ 
   window.addEventListener('load',   drawHeroScribbles);
   window.addEventListener('resize', drawHeroScribbles);
-
+ 
   /* ── Clients : rendu dynamique ───────────────────────── */
   (function renderClients() {
     const section = document.getElementById('clients');
@@ -351,13 +351,18 @@
       return typeof c === 'string' || c.active !== false;
     }).map(c => {
       const name = typeof c === 'string' ? c : c.name;
-      const url  = typeof c === 'object' ? c.url : '';
-      return url
-        ? `<a class="client-name" href="${url}" target="_blank" rel="noopener">${name}</a>`
-        : `<span class="client-name">${name}</span>`;
+      const url  = typeof c === 'object' ? c.url  : '';
+      const logo = typeof c === 'object' ? c.logo : '';
+      const inner = logo
+        ? `<img src="${logo}" alt="${name}" class="client-logo" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'client-name',textContent:'${name}'}))">`
+        : name;
+      const tag = url ? 'a' : 'span';
+      const hrefAttr = url ? `href="${url}" target="_blank" rel="noopener"` : '';
+      const cls = logo ? 'client-logo-wrap' : 'client-name';
+      return `<${tag} class="${cls}" ${hrefAttr}>${inner}</${tag}>`;
     }).join('');
   })();
-
+ 
   /* ── Méthode : rendu dynamique ───────────────────────── */
   (function renderMethode() {
     const container = document.getElementById('methode-steps');
@@ -370,7 +375,7 @@
       </div>
     `).join('');
   })();
-
+ 
   /* ── Prestations : rendu dynamique ───────────────────── */
   (function renderServices() {
     const grid = document.getElementById('services-grid');
@@ -385,19 +390,19 @@
       </div>
     `).join('');
   })();
-
+ 
   /* ── Live Stats : rendu + compteurs animés ────────────── */
   (function initHeroStats() {
     const container = document.getElementById('heroStats');
     if (!container || typeof STATS_DEFAULTS === 'undefined') return;
-
+ 
     // Fusionner les defaults avec les overrides localStorage
     let stats = STATS_DEFAULTS;
     try {
       const saved = localStorage.getItem('gribouille_live_stats');
       if (saved) stats = JSON.parse(saved);
     } catch(e) {}
-
+ 
     // Rendre le HTML
     container.innerHTML = stats.map(s => `
       <div class="hstat">
@@ -407,16 +412,16 @@
         <span class="hstat-bar"></span>
       </div>
     `).join('');
-
+ 
     // Animer les compteurs
     function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-
+ 
     function animateCounter(el) {
       const target = parseInt(el.dataset.target);
       const suffix = el.dataset.suffix || '';
       const dur    = 1600;
       const start  = performance.now();
-
+ 
       function frame(now) {
         const t = Math.min((now - start) / dur, 1);
         el.textContent = Math.round(easeOut(t) * target) + suffix;
@@ -428,7 +433,7 @@
       }
       requestAnimationFrame(frame);
     }
-
+ 
     const els = container.querySelectorAll('.hstat-num[data-target]');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -437,16 +442,16 @@
     }, { threshold: .3 });
     els.forEach(el => obs.observe(el));
   })();
-
+ 
 (function renderHomeProjects() {
   if (typeof PROJECTS === "undefined") return;
-
+ 
   const container = document.getElementById("home-projects");
   if (!container) return;
-
+ 
   const sorted = [...PROJECTS].reverse().sort((a, b) => parseInt(b.year) - parseInt(a.year));
   const latest = sorted.slice(0, 5);
-
+ 
   container.innerHTML = latest.map((p, i) => {
     return `
       <a href="project-detail.html?id=${p.id}" class="proj">
@@ -461,13 +466,13 @@
     `;
   }).join("");
 })();</script>
-
+ 
 <!-- ── Injection pages-data.js › Accueil ── -->
 <script>
 (function () {
   if (typeof PAGES_DEFAULTS === 'undefined' || !PAGES_DEFAULTS.index) return;
   const p = PAGES_DEFAULTS.index;
-
+ 
   // Hero
   if (p.hero) {
     const h = p.hero;
@@ -483,7 +488,7 @@
     const cta2 = document.getElementById('hero-cta2');
     if (cta2) { if (h.cta2Label) cta2.textContent = h.cta2Label; if (h.cta2Href) cta2.href = h.cta2Href; }
   }
-
+ 
   // About preview
   if (p.about) {
     const a = p.about;
@@ -502,7 +507,7 @@
     const btn = document.getElementById('about-btn');
     if (btn) { if (a.btnLabel) btn.textContent = a.btnLabel; if (a.btnHref) btn.href = a.btnHref; }
   }
-
+ 
   // CTA strip
   if (p.cta) {
     const c = p.cta;
@@ -515,6 +520,7 @@
   }
 })();
 </script>
-
+ 
 </body>
 </html>
+ 
