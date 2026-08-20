@@ -289,7 +289,7 @@ esperanzah! 2026
 ════════════════════════════════════════════════════════ */
    
   {
-    id:    "esperanzah!",
+    id:    "Esperanzah",
     cat:   "festival",
     year:  "2026",
 
