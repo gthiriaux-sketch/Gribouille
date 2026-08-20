@@ -288,7 +288,7 @@ esperanzah! 2026
     title:      "Esperanzah 2026",
     breadcrumb: "regisseur camping",
     desc:       "esperanzah 2026 Deco et Camping festif.",
-    img:        "projects/espe26/1.webp",
+    img:        "projects/espe26/espe1.webp",
     imgAlt:     "esperanzah camping",
 
     tags: ["Échafaudage","Déco","Camping festif","Cuivre"],
