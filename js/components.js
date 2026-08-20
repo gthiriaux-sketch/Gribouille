@@ -1,9 +1,10 @@
+onents · JS
 /**
  * components.js — Composants partagés injectés dans toutes les pages
  * Curseur personnalisé, header et footer sont définis ici une seule fois.
  */
 (function () {
-
+ 
   /* ── Header ──────────────────────────────────────────────────────── */
   const _hdrDefaults = {
     logo: 'img/Logo/multi-noir.webp',
@@ -36,7 +37,7 @@
       </nav>
     </div>
   </header>`;
-
+ 
   /* ── Footer ──────────────────────────────────────────────────────── */
   const _ftrDefaults = {
     logo: 'img/Logo/multi-blanc.webp',
@@ -79,7 +80,13 @@
           <div class="fnc">
             <h4>Réseaux</h4>
             <ul>
-              ${(_ftr.socials || []).map(s => `<li><a href="${s.href}" ${s.href.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${s.label}</a></li>`).join('\n              ')}
+              ${(_ftr.socials || []).map(s => {
+                const isMailto = s.href.startsWith('mailto:');
+                const attrs = isMailto
+                  ? `class="js-mailto" data-email="${s.href.replace('mailto:', '')}"`
+                  : (s.href.startsWith('http') ? 'target="_blank" rel="noopener"' : '');
+                return `<li><a href="${s.href}" ${attrs}>${s.label}</a></li>`;
+              }).join('\n              ')}
             </ul>
           </div>
           <div class="fnc">
@@ -96,7 +103,7 @@
       </div>
     </div>
   </footer>`;
-
+ 
   /* ── Curseur personnalisé (desktop uniquement) ───────────────────── */
   const _isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
   if (!_isTouchDevice) {
@@ -112,21 +119,21 @@
       _cRing.style.top  = e.clientY + 'px';
     });
   }
-
+ 
   /* ── Injection header ────────────────────────────────────────────── */
   const headerRoot = document.getElementById('header-root');
   if (headerRoot) {
     headerRoot.insertAdjacentHTML('afterend', HEADER_HTML);
     headerRoot.remove();
   }
-
+ 
   /* ── Injection footer ────────────────────────────────────────────── */
   const footerRoot = document.getElementById('footer-root');
   if (footerRoot) {
     footerRoot.insertAdjacentHTML('afterend', FOOTER_HTML);
     footerRoot.remove();
   }
-
+ 
   /* ── Favicon dynamique ───────────────────────────────────────────── */
   if (typeof LAYOUT_DEFAULTS !== 'undefined' && LAYOUT_DEFAULTS.favicon) {
     let faviconEl = document.querySelector("link[rel~='icon']");
@@ -137,16 +144,68 @@
     }
     faviconEl.href = LAYOUT_DEFAULTS.favicon;
   }
-
+ 
   /* ── Lien actif selon la page courante ───────────────────────────── */
   const page = location.pathname.split('/').pop() || 'index.html';
   // project-detail.html → on considère "Projets" comme actif
   const activeHref = page === 'project-detail.html' ? 'projects.html' : page;
-
+ 
   document.querySelectorAll('#navLinks a').forEach(function (link) {
     if (link.getAttribute('href') === activeHref) {
       link.classList.add('active');
     }
   });
-
+ 
+  /* ── Lien Email footer : filet de sécurité si aucun client mail ─────
+     On laisse le mailto: se déclencher normalement, mais on copie
+     aussi l'adresse dans le presse-papier et on affiche un petit
+     message, au cas où l'utilisateur n'a pas de client mail configuré.
+  ────────────────────────────────────────────────────────────────── */
+  function showEmailToast(text) {
+    let toast = document.getElementById('email-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'email-toast';
+      toast.setAttribute('role', 'status');
+      Object.assign(toast.style, {
+        position: 'fixed',
+        left: '50%',
+        bottom: '2rem',
+        transform: 'translateX(-50%) translateY(20px)',
+        background: '#111',
+        color: '#fff',
+        padding: '.75rem 1.25rem',
+        borderRadius: '999px',
+        fontSize: '.85rem',
+        letterSpacing: '.02em',
+        zIndex: '9999',
+        opacity: '0',
+        transition: 'opacity .25s ease, transform .25s ease',
+        pointerEvents: 'none',
+        whiteSpace: 'nowrap',
+      });
+      document.body.appendChild(toast);
+    }
+    toast.textContent = text;
+    requestAnimationFrame(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+    });
+    clearTimeout(toast._hideTimer);
+    toast._hideTimer = setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(20px)';
+    }, 2800);
+  }
+ 
+  document.querySelectorAll('.js-mailto').forEach(function (link) {
+    link.addEventListener('click', function () {
+      const email = link.dataset.email;
+      if (!email || !navigator.clipboard) return;
+      navigator.clipboard.writeText(email)
+        .then(() => showEmailToast('Adresse copiée : ' + email))
+        .catch(() => {});
+    });
+  });
+ 
 })();
