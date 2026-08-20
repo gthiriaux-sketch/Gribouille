@@ -7,7 +7,7 @@
 const LAYOUT_DEFAULTS = {
   "favicon": "img/icones/IMG_8030_1_.webp",
   "header": {
-    "logo": "img/media/Logo/multi-noir.webp",
+    "logo": "img/Logo/multi-noir.webp",
     "links": [
       {
         "label": "Accueil",
@@ -32,7 +32,7 @@ const LAYOUT_DEFAULTS = {
     ]
   },
   "footer": {
-    "logo": "img/media/Logo/multi-blanc.webp",
+    "logo": "img/Logo/multi-blanc.webp",
     "tagline": "Scénographie immersive pour clubs, festivals & événements. Du concept à l'installation — Bruxelles & au-delà.",
     "copyright": "© 2025 Gribouille Event Lab — Bruxelles, Belgique",
     "socials": [
