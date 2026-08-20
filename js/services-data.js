@@ -27,7 +27,7 @@ const SERVICES_DEFAULTS = [
   {
     title:       "Production Technique",
     text:        "Gestion technique complète du repérage à la validation finale — logistique, rigging, électrique et coordination d'équipes.",
-    icon:        "img/icones/IMG_812.webp",
+    icon:        "img/icones/IMG_8124.webp",
     showOnIndex: true,
     id:          "technical",
     label:       "Dans les Coulisses",
