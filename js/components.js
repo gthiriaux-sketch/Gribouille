@@ -1,4 +1,4 @@
-onents · JS
+
 /**
  * components.js — Composants partagés injectés dans toutes les pages
  * Curseur personnalisé, header et footer sont définis ici une seule fois.
