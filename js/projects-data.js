@@ -356,6 +356,11 @@ esperanzah! 2026
       { src: "projects/espe26/espe5.webp", alt: "espe5", caption: "" },
       { src: "projects/espe26/espe6.webp", alt: "espe6", caption: "" },
       { src: "projects/espe26/espe7.webp", alt: "espe7", caption: "" },
+      { src: "projects/espe26/espe8.webp", alt: "espe8", caption: "" },
+      { src: "projects/espe26/espe9.webp", alt: "espe9", caption: "" },
+      { src: "projects/espe26/espe10.webp", alt: "espe10", caption: "" },
+      { src: "projects/espe26/espe11.webp", alt: "espe11", caption: "" },
+      
     ],
     model3d: "projects/scene-festival/model.glb",
     plans: ["projects/scene-festival/plan.pdf"],
