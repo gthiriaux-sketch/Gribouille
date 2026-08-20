@@ -283,7 +283,7 @@ Main stage
     ],
     model3d: "projects/vectorworks-stage/model.glb",
     plans: ["projects/vectorworks-stage/plan.pdf"],
-  }
+  },
 /* ════════════════════════════════════════════════════════
 esperanzah! 2026
 ════════════════════════════════════════════════════════ */
