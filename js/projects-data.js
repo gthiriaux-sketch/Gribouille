@@ -187,7 +187,7 @@ Main stage
     cat:   "public",
     year:  "2026",
 
-    title:      "Un échaufage scénique ",
+    title:      "Un échafaudage scénique ",
     breadcrumb: "Un fichier vectorworks gratuit!",
     desc:       "Un modèle d’échafaudage Layher (systèmes Allround et Event) ainsi qu’une structure en truss Global Truss, réalisés sur Vectorworks Spotlight.\nSonoriser avec un système L-Acoustics.",
     img:        "projects/vectorworks-stage/stage3.webp",
