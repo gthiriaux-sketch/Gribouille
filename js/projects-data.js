@@ -279,7 +279,7 @@ Main stage
       { src: "projects/vectorworks-stage/stage19.webp", alt: "stage19", caption: "" },
       { src: "projects/vectorworks-stage/stage20.webp", alt: "stage20", caption: "" },
       { src: "projects/vectorworks-stage/stage21.webp", alt: "stage21", caption: "" },
-      { src: "projects/vectorworks-stage/Sans_Titre13.webp", alt: "Sans_Titre13", caption: "" },
+      { src: "projects/vectorworks-stage/stage22.webp", alt: "stage22", caption: "" },
     ],
     model3d: "projects/vectorworks-stage/model.glb",
     plans: ["projects/vectorworks-stage/plan.pdf"],
