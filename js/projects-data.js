@@ -210,14 +210,6 @@ Main stage
 
     subtitle: "Projets Public Vectorworks Spotlight",
     body: `
-      <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Modèle de scène</title>
-</head>
-<body>
-
     <h2>Modèle de scène</h2>
 
     <p>
@@ -314,26 +306,17 @@ esperanzah! 2026
     duree:   "24 jours",
     surface: "—",
 
-    subtitle: "Du métal, du bois et du cuivre.",
+    subtitle: "Esperanzah! — Du bois, des câbles et beaucoup de soleil",
     body: `
-    <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Modèle de scène</title>
-</head>
-<body>
-      <h2>esperanzah! — Du bois, des câbles et beaucoup de soleil</h2>
-
-  <p>
+    <p>
     Trois semaines les mains dans le montage, les pieds dans la poussière et la tête dans l’organisation.
-  </p>
+   </p>
 
-  <p>
+   <p>
     Pour cette édition d’esperanzah!, <strong>Gribouille Event Lab</strong> a rejoint les équipes du festival sur plusieurs fronts.
     D’abord autour de <strong>La Nova</strong>, une scène spectaculaire construite à partir de panneaux de bois assemblés dans une structure d’échafaudage.
     Une construction que nous retrouvons depuis maintenant trois ans, en participant à son montage aux côtés des équipes qui la font vivre et évoluer.
-  </p>
+   </p>
 
   <p>
     Puis direction le <strong>camping festif</strong>.
@@ -352,10 +335,8 @@ esperanzah! 2026
   <p>
     Une expérience de terrain qui résume assez bien l’esprit de <strong>Gribouille</strong> :
     <strong>mettre les mains dans le cambouis, trouver des solutions et transformer un terrain vide en un espace prêt à accueillir du public.</strong>
-  </p>
-  
-</body>
-</html>
+  </p> 
+
     `,
 
     quote: null,
