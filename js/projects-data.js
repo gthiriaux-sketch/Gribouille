@@ -351,7 +351,7 @@ esperanzah! 2026
     quote: null,
 
     services: [
-      "Distribution électrique,
+      "Distribution électrique",
       "Distribution eau",
       "Instalation de décor",
       "Travail en hauteur",
