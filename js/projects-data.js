@@ -4,6 +4,11 @@
 ════════════════════════════════════════════════════════ */
 
 const PROJECTS = [
+   
+/* ════════════════════════════════════════════════════════
+Main stage 
+════════════════════════════════════════════════════════ */
+   
   {
     id:    "scene-festival",
     cat:   "festival",
@@ -58,6 +63,10 @@ const PROJECTS = [
     plans: ["projects/scene-festival/plan.pdf"],
   },
 
+/* ════════════════════════════════════════════════════════
+Main stage 
+════════════════════════════════════════════════════════ */
+   
   {
     id:    "totems-lumineux-festival",
     cat:   "festival",
@@ -112,6 +121,10 @@ const PROJECTS = [
     plans: ["projects/totems-lumineux-festival/plan.pdf"],
   },
 
+/* ════════════════════════════════════════════════════════
+Main stage 
+════════════════════════════════════════════════════════ */
+   
   {
     id:    "scene-collectif-ecologique",
     cat:   "collectif",
@@ -165,6 +178,10 @@ const PROJECTS = [
     plans: ["projects/scene-collectif-ecologique/plan.pdf"],
   },
 
+/* ════════════════════════════════════════════════════════
+Main stage 
+════════════════════════════════════════════════════════ */
+   
   {
     id:    "vectorworks-stage",
     cat:   "public",
@@ -267,7 +284,68 @@ const PROJECTS = [
     model3d: "projects/vectorworks-stage/model.glb",
     plans: ["projects/vectorworks-stage/plan.pdf"],
   }
+/* ════════════════════════════════════════════════════════
+Esperanzah! 2026
+════════════════════════════════════════════════════════ */
+   
+  {
+    id:    "Esperanzah!",
+    cat:   "festival",
+    year:  "2026",
 
+    title:      "Esperanzah! 2026",
+    breadcrumb: "Construction de la Nova",
+    desc:       "Esperanzah 2026 Nova.",
+    img:        "projects/Espe26/1.webp",
+    imgAlt:     "Esperanzah Nova",
+
+    tags: ["Échafaudage","Déco","Panneau en bois"],
+
+    stats: [
+      { num: "8", label: "m de haut" },
+      { num: "22", label: "de long" },
+      { num: "7", label: "Jour de travail" },
+      { num: "5", label: "coéquipier" },
+    ],
+
+    client:  "Esperanzah!",
+    lieu:    "floreffe",
+    date:    "2026",
+    duree:   "7 jours",
+    surface: "—",
+
+    subtitle: "Du métal, du bois et de la pierre.",
+    body: `
+      <h2>Un squelette d'acier et une peau de bois</h2>
+      <p>Cette année c'était la troisième fois que nous montions cette scènes.</p>
+    `,
+
+    quote: null,
+
+    services: [
+      "Plan CAD",
+      "Plan 3D",
+      "Rendu 3D",
+      "Ajout de flamme",
+    ],
+
+    gallery: [
+      { src: "projects/scene-festival/Chateau1.webp", alt: "Chateau1", caption: "" },
+      { src: "projects/scene-festival/Chateau2.webp", alt: "Chateau2", caption: "" },
+      { src: "projects/scene-festival/Chateau3.webp", alt: "Chateau3", caption: "" },
+      { src: "projects/scene-festival/Chateau4.webp", alt: "Chateau4", caption: "" },
+      { src: "projects/scene-festival/Chateau5.webp", alt: "Chateau5", caption: "" },
+      { src: "projects/scene-festival/Chateau6.webp", alt: "Chateau6", caption: "" },
+      { src: "projects/scene-festival/Chateau7.webp", alt: "Chateau7", caption: "" },
+    ],
+    model3d: "projects/scene-festival/model.glb",
+    plans: ["projects/scene-festival/plan.pdf"],
+  },
+   
+/* ════════════════════════════════════════════════════════
+Fin
+════════════════════════════════════════════════════════ */
+   
 ];
 
 const CATEGORY_LABELS = {
