@@ -285,58 +285,86 @@ Main stage
     plans: ["projects/vectorworks-stage/plan.pdf"],
   }
 /* ════════════════════════════════════════════════════════
-Esperanzah! 2026
+esperanzah! 2026
 ════════════════════════════════════════════════════════ */
    
   {
-    id:    "Esperanzah!",
+    id:    "esperanzah!",
     cat:   "festival",
     year:  "2026",
 
-    title:      "Esperanzah! 2026",
-    breadcrumb: "Construction de la Nova",
-    desc:       "Esperanzah 2026 Nova.",
-    img:        "projects/Espe26/1.webp",
-    imgAlt:     "Esperanzah Nova",
+    title:      "esperanzah! 2026",
+    breadcrumb: "regisseur camping",
+    desc:       "esperanzah 2026 Deco et Camping festif.",
+    img:        "projects/espe26/1.webp",
+    imgAlt:     "esperanzah camping",
 
-    tags: ["Échafaudage","Déco","Panneau en bois"],
+    tags: ["Échafaudage","Déco","Camping festif","Cuivre"],
 
     stats: [
       { num: "8", label: "m de haut" },
       { num: "22", label: "de long" },
-      { num: "7", label: "Jour de travail" },
-      { num: "5", label: "coéquipier" },
+      { num: "40.k", label: "festivalier" },
+      { num: "14.k", label: "Campeur" },
     ],
 
-    client:  "Esperanzah!",
+    client:  "esperanzah!",
     lieu:    "floreffe",
     date:    "2026",
-    duree:   "7 jours",
+    duree:   "24 jours",
     surface: "—",
 
-    subtitle: "Du métal, du bois et de la pierre.",
+    subtitle: "Du métal, du bois et du cuivre.",
     body: `
-      <h2>Un squelette d'acier et une peau de bois</h2>
-      <p>Cette année c'était la troisième fois que nous montions cette scènes.</p>
+      <h2>esperanzah! — Du bois, des câbles et beaucoup de soleil</h2>
+
+  <p>
+    Trois semaines les mains dans le montage, les pieds dans la poussière et la tête dans l’organisation.
+  </p>
+
+  <p>
+    Pour cette édition d’esperanzah!, <strong>Gribouille Event Lab</strong> a rejoint les équipes du festival sur plusieurs fronts.
+    D’abord autour de <strong>La Nova</strong>, une scène spectaculaire construite à partir de panneaux de bois assemblés dans une structure d’échafaudage.
+    Une construction que nous retrouvons depuis maintenant trois ans, en participant à son montage aux côtés des équipes qui la font vivre et évoluer.
+  </p>
+
+  <p>
+    Puis direction le <strong>camping festif</strong>.
+  </p>
+
+  <p>
+    Pendant près de deux semaines, nous avons rejoint la régie du site pour prendre en charge la
+    <strong>distribution de l’eau et de l’électricité</strong>, tout en participant à la construction et à la mise en place du camping avec les équipes d’esperanzah!.
+  </p>
+
+  <p>
+    Des réseaux à installer, des espaces à organiser, des imprévus à gérer et surtout beaucoup de coordination entre les équipes.
+    Le tout sous une belle période de canicule — parce qu’un festival sans un peu de challenge, ce ne serait pas vraiment un festival.
+  </p>
+
+  <p>
+    Une expérience de terrain qui résume assez bien l’esprit de <strong>Gribouille</strong> :
+    <strong>mettre les mains dans le cambouis, trouver des solutions et transformer un terrain vide en un espace prêt à accueillir du public.</strong>
+  </p>
     `,
 
     quote: null,
 
     services: [
-      "Plan CAD",
-      "Plan 3D",
-      "Rendu 3D",
-      "Ajout de flamme",
+      "Distribution électrique,
+      "Distribution eau",
+      "Instalation de décor",
+      "Travail en hauteur",
     ],
 
     gallery: [
-      { src: "projects/scene-festival/Chateau1.webp", alt: "Chateau1", caption: "" },
-      { src: "projects/scene-festival/Chateau2.webp", alt: "Chateau2", caption: "" },
-      { src: "projects/scene-festival/Chateau3.webp", alt: "Chateau3", caption: "" },
-      { src: "projects/scene-festival/Chateau4.webp", alt: "Chateau4", caption: "" },
-      { src: "projects/scene-festival/Chateau5.webp", alt: "Chateau5", caption: "" },
-      { src: "projects/scene-festival/Chateau6.webp", alt: "Chateau6", caption: "" },
-      { src: "projects/scene-festival/Chateau7.webp", alt: "Chateau7", caption: "" },
+      { src: "projects/espe26/espe1.webp", alt: "espe1", caption: "" },
+      { src: "projects/espe26/espe2.webp", alt: "espe2", caption: "" },
+      { src: "projects/espe26/espe3.webp", alt: "espe3", caption: "" },
+      { src: "projects/espe26/espe4.webp", alt: "espe4", caption: "" },
+      { src: "projects/espe26/espe5.webp", alt: "espe5", caption: "" },
+      { src: "projects/espe26/espe6.webp", alt: "espe6", caption: "" },
+      { src: "projects/espe26/espe7.webp", alt: "espe7", caption: "" },
     ],
     model3d: "projects/scene-festival/model.glb",
     plans: ["projects/scene-festival/plan.pdf"],
