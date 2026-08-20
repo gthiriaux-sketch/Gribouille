@@ -362,8 +362,8 @@ esperanzah! 2026
       { src: "projects/espe26/espe11.webp", alt: "espe11", caption: "" },
       
     ],
-    model3d: "projects/scene-festival/model.glb",
-    plans: ["projects/scene-festival/plan.pdf"],
+    model3d: null,
+    plans: [],
   },
    
 /* ════════════════════════════════════════════════════════
