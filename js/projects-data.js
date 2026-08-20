@@ -296,8 +296,8 @@ esperanzah! 2026
     stats: [
       { num: "8", label: "m de haut" },
       { num: "22", label: "de long" },
-      { num: "40.k", label: "festivalier" },
-      { num: "14.k", label: "Campeur" },
+      { num: "40k", label: "festivalier" },
+      { num: "14k", label: "Campeur" },
     ],
 
     client:  "esperanzah!",
@@ -366,6 +366,89 @@ esperanzah! 2026
     plans: [],
   },
    
+/* ════════════════════════════════════════════════════════
+   Couleur Café 2026
+════════════════════════════════════════════════════════ */
+   
+  {
+    id:    "CouleurCafe",
+    cat:   "festival",
+    year:  "2026",
+
+    title:      "Couleur Café 2026",
+    breadcrumb: "régie & technique",
+    desc:       "Couleur Café 2026 — Montage, régie et technique événementielle.",
+    img:        "projects/couleurcafe26/cc1.webp",
+    imgAlt:     "Couleur Café 2026",
+
+    tags: ["Régie", "Technique", "Montage", "Festival"],
+
+    stats: [
+      { num: "3", label: "jours de festival" },
+      { num: "3", label: "scènes" },
+      { num: "75k", label: "spectateurs" },
+      { num: "30", label: "jours de montage" },
+    ],
+
+    client:  "Couleur Café",
+    lieu:    "Bruxelles",
+    date:    "2026",
+    duree:   "30 jours",
+    surface: "—",
+
+    subtitle: "Couleur Café — Quand le montage devient partie intégrante du spectacle",
+
+    body: `
+    <p>
+      Quelques jours pour transformer un terrain vide en une véritable ville éphémère.
+      À <strong>Couleur Café 2026</strong>, Gribouille Event Lab rejoint les équipes techniques
+      pour participer au montage et à la préparation du festival.
+    </p>
+
+    <p>
+      Du déchargement à l'installation, chaque journée demande de jongler entre
+      <strong>logistique, montage, coordination et adaptation</strong>.
+      Un festival de cette ampleur, c'est une succession de structures, de décors,
+      d'équipements et d'espaces qui doivent trouver leur place avant l'arrivée du public.
+    </p>
+
+    <p>
+      Sur le terrain, le travail se fait rarement exactement comme prévu sur le papier.
+      Il faut avancer avec les équipes, résoudre les imprévus et trouver rapidement
+      les bonnes solutions pour que le chantier continue d'avancer.
+    </p>
+
+    <p>
+      Une nouvelle expérience qui vient renforcer notre approche de la production
+      événementielle : <strong>penser, construire, adapter et faire fonctionner les espaces
+      dans les conditions réelles du terrain.</strong>
+    </p>
+    `,
+
+    quote: null,
+
+    services: [
+      "Régie technique",
+      "Montage",
+      "Logistique",
+      "Installation de structures",
+      "Coordination terrain",
+    ],
+
+    gallery: [
+      { src: "projects/couleurcafe26/cc1.webp", alt: "Couleur Café 2026", caption: "" },
+      { src: "projects/couleurcafe26/cc2.webp", alt: "Couleur Café 2026", caption: "" },
+      { src: "projects/couleurcafe26/cc3.webp", alt: "Couleur Café 2026", caption: "" },
+      { src: "projects/couleurcafe26/cc4.webp", alt: "Couleur Café 2026", caption: "" },
+      { src: "projects/couleurcafe26/cc5.webp", alt: "Couleur Café 2026", caption: "" },
+      { src: "projects/couleurcafe26/cc6.webp", alt: "Couleur Café 2026", caption: "" },
+      { src: "projects/couleurcafe26/cc7.webp", alt: "Couleur Café 2026", caption: "" },
+      { src: "projects/couleurcafe26/cc8.webp", alt: "Couleur Café 2026", caption: "" },
+    ],
+
+    model3d: null,
+    plans: [],
+  },   
 /* ════════════════════════════════════════════════════════
 Fin
 ════════════════════════════════════════════════════════ */
