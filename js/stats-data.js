@@ -17,13 +17,13 @@ const STATS_DEFAULTS = [
     status: "En cours",
   },
   {
-    target: 70,
+    target: 75,
     suffix: "K",
     label:  "Festivaliers touchés",
     status: "Record",
   },
   {
-    target: 2,
+    target: 1,
     suffix: "",
     label:  "Pays touché",
     status: "En expansion",
