@@ -222,84 +222,96 @@
     const rc  = rough.canvas(canvas);
     const W   = canvas.width, H = canvas.height, cx = W / 2;
     const INK = '#12021E', ACC = '#fab722', SKIN = '#F5C9A0', WH = '#fffef0';
+    const HOOD = '#1c1c1c', SWEAT = '#20201f', HAIR_F = '#4a2f22', HAIR_H = '#1c1712', BLUSH = '#FFB3C1';
     const s = (fill, rgh) => ({ stroke: INK, strokeWidth: 2.2, roughness: rgh || 1.8, fill, fillStyle: 'solid', fillWeight: 2 });
     const ln = (w) => ({ stroke: INK, strokeWidth: w || 2.5, roughness: 2 });
 
     if (variant === 0) {
-      // Robe
-      rc.path(`M ${cx-44} ${H*.56} Q ${cx} ${H*.63} ${cx+44} ${H*.56} L ${cx+62} ${H*.94} L ${cx-62} ${H*.94} Z`, s(ACC));
+      // ── Océane : sweat à capuche noir, cheveux mi-longs, piercing septum ──
+      // Sweat à capuche
+      rc.path(`M ${cx-46} ${H*.58} Q ${cx} ${H*.65} ${cx+46} ${H*.58} L ${cx+64} ${H*.97} L ${cx-64} ${H*.97} Z`, s(HOOD));
+      // Cordons de capuche
+      rc.line(cx-9, H*.605, cx-11, H*.75, ln(2));
+      rc.line(cx+9, H*.605, cx+12, H*.76, ln(2));
+      rc.ellipse(cx-11, H*.755, 6, 6, s(INK, 1.2));
+      rc.ellipse(cx+12, H*.765, 6, 6, s(INK, 1.2));
       // Bras
-      rc.line(cx-42, H*.54, cx-68, H*.73, { ...ln(10), roughness:1.2 });
-      rc.ellipse(cx-70, H*.75, 16, 16, s(SKIN));
-      rc.line(cx+42, H*.54, cx+66, H*.71, { ...ln(10), roughness:1.2 });
-      rc.ellipse(cx+68, H*.73, 16, 16, s(SKIN));
-      // Torse
-      rc.ellipse(cx, H*.52, 82, 54, s(SKIN));
+      rc.line(cx-44, H*.56, cx-70, H*.75, { ...ln(10), roughness:1.2 });
+      rc.ellipse(cx-72, H*.77, 16, 16, s(SKIN));
+      rc.line(cx+44, H*.56, cx+68, H*.73, { ...ln(10), roughness:1.2 });
+      rc.ellipse(cx+70, H*.75, 16, 16, s(SKIN));
       // Cou
-      rc.rectangle(cx-11, H*.40, 22, 15, s(SKIN, 1.2));
+      rc.rectangle(cx-11, H*.41, 22, 15, s(SKIN, 1.2));
       // Tête
-      rc.ellipse(cx, H*.30, 90, 94, s(SKIN));
-      // Béret
-      rc.arc(cx-5, H*.185, 96, 60, Math.PI*1.07, Math.PI*2.0, true, s(INK));
-      rc.ellipse(cx-5, H*.20, 96, 24, s(INK, 1.2));
-      // Pompon
-      rc.ellipse(cx+22, H*.11, 16, 16, s(ACC));
-      // Yeux
-      rc.ellipse(cx-17, H*.29, 11, 13, s(INK));
-      rc.ellipse(cx+17, H*.29, 11, 13, s(INK));
+      rc.ellipse(cx, H*.30, 88, 92, s(SKIN));
+      // Cheveux arrière (mi-longs, encadrant le visage)
+      rc.path(`M ${cx-68} ${H*.19} C ${cx-84} ${H*.34} ${cx-80} ${H*.58} ${cx-58} ${H*.65} C ${cx-48} ${H*.68} ${cx-44} ${H*.58} ${cx-46} ${H*.48} Z`, s(HAIR_F, 2));
+      rc.path(`M ${cx+68} ${H*.19} C ${cx+84} ${H*.34} ${cx+80} ${H*.58} ${cx+58} ${H*.65} C ${cx+48} ${H*.68} ${cx+44} ${H*.58} ${cx+46} ${H*.48} Z`, s(HAIR_F, 2));
+      // Joues
+      rc.ellipse(cx-27, H*.35, 18, 10, { stroke:'none', fill:BLUSH, fillStyle:'solid', roughness:2 });
+      rc.ellipse(cx+27, H*.35, 18, 10, { stroke:'none', fill:BLUSH, fillStyle:'solid', roughness:2 });
+      // Sourcils
+      rc.line(cx-32, H*.255, cx-12, H*.245, ln(2.2));
+      rc.line(cx+12, H*.245, cx+32, H*.255, ln(2.2));
+      // Yeux (souriants)
+      rc.ellipse(cx-17, H*.285, 10, 12, s(INK));
+      rc.ellipse(cx+17, H*.285, 10, 12, s(INK));
       rc.ellipse(cx-15, H*.275, 4, 4, s(WH));
       rc.ellipse(cx+19, H*.275, 4, 4, s(WH));
-      // Nez
-      rc.arc(cx, H*.355, 11, 9, 0, Math.PI, false, ln(1.5));
+      // Nez + piercing septum
+      rc.arc(cx, H*.355, 10, 9, 0, Math.PI, false, ln(1.5));
+      rc.ellipse(cx, H*.383, 7, 5, { stroke:'#c9c9c9', strokeWidth:1.5, fill:'none', roughness:1.5 });
       // Sourire
-      rc.arc(cx, H*.39, 32, 19, 0, Math.PI, false, ln(2.5));
-      // Joues
-      rc.ellipse(cx-28, H*.36, 20, 11, { stroke:'none', fill:'#FFB3C1', fillStyle:'solid', roughness:2 });
-      rc.ellipse(cx+28, H*.36, 20, 11, { stroke:'none', fill:'#FFB3C1', fillStyle:'solid', roughness:2 });
+      rc.arc(cx, H*.40, 30, 18, 0, Math.PI, false, ln(2.5));
+      // Frange / mèches avant (par-dessus le front)
+      rc.arc(cx, H*.165, 90, 58, Math.PI*1.05, Math.PI*1.95, true, s(HAIR_F, 1.6));
+      // Boucles d'oreilles
+      rc.ellipse(cx-82, H*.34, 5, 5, s(ACC, 1.2));
+      rc.ellipse(cx+82, H*.34, 5, 5, s(ACC, 1.2));
       // Pieds
       rc.ellipse(cx-26, H*.965, 30, 16, s(INK, 1.2));
       rc.ellipse(cx+26, H*.965, 30, 16, s(INK, 1.2));
     } else {
+      // ── Grégoire : pull noir côtelé, cheveux longs en chignon, barbe ──
       // Jambes
       rc.path(`M ${cx-44} ${H*.74} L ${cx-37} ${H*.96} L ${cx-11} ${H*.96} L ${cx-7} ${H*.74} Z`, s(INK, 1.5));
       rc.path(`M ${cx+7} ${H*.74} L ${cx+11} ${H*.96} L ${cx+37} ${H*.96} L ${cx+44} ${H*.74} Z`, s(INK, 1.5));
       // Chaussures
       rc.ellipse(cx-23, H*.975, 34, 16, s(INK, 1.2));
       rc.ellipse(cx+23, H*.975, 34, 16, s(INK, 1.2));
-      // Chemise
-      rc.path(`M ${cx-50} ${H*.74} L ${cx-50} ${H*.51} Q ${cx} ${H*.45} ${cx+50} ${H*.51} L ${cx+50} ${H*.74} Z`, s(ACC));
+      // Pull côtelé
+      rc.path(`M ${cx-52} ${H*.74} L ${cx-52} ${H*.50} Q ${cx} ${H*.44} ${cx+52} ${H*.50} L ${cx+52} ${H*.74} Z`, s(SWEAT));
+      for (let x=-40; x<=40; x+=13) {
+        rc.line(cx+x, H*.52, cx+x-3, H*.73, { stroke:'#000000', strokeWidth:1, roughness:2.2 });
+      }
       // Bras
-      rc.line(cx-48, H*.53, cx-74, H*.70, { ...ln(10), roughness:1.2 });
-      rc.ellipse(cx-76, H*.72, 16, 16, s(SKIN));
-      rc.line(cx+48, H*.53, cx+72, H*.67, { ...ln(10), roughness:1.2 });
-      rc.ellipse(cx+74, H*.69, 16, 16, s(SKIN));
-      // Crayon
-      rc.line(cx+78, H*.63, cx+92, H*.43, { stroke:ACC, strokeWidth:4.5, roughness:1.5 });
-      rc.line(cx+92, H*.43, cx+96, H*.36, ln(2));
+      rc.line(cx-50, H*.52, cx-76, H*.70, { ...ln(10), roughness:1.2 });
+      rc.ellipse(cx-78, H*.72, 16, 16, s(SKIN));
+      rc.line(cx+50, H*.52, cx+74, H*.68, { ...ln(10), roughness:1.2 });
+      rc.ellipse(cx+76, H*.70, 16, 16, s(SKIN));
       // Cou
-      rc.rectangle(cx-11, H*.39, 22, 15, s(SKIN, 1.2));
+      rc.rectangle(cx-11, H*.40, 22, 15, s(SKIN, 1.2));
       // Tête
-      rc.ellipse(cx, H*.29, 92, 92, s(SKIN));
-      // Cheveux hérissés (avant l'arc foncé pour être derrière)
-      [[-36,H*.165,-42,H*.028],[-17,H*.13,-19,H*-.005],[0,H*.12,0,H*-.005],[17,H*.13,19,H*-.005],[36,H*.165,42,H*.028]].forEach(([x1,y1,x2,y2]) =>
-        rc.line(cx+x1, y1, cx+x2, y2, { ...ln(4.5), roughness:2.5 })
-      );
-      // Base cheveux
-      rc.arc(cx, H*.175, 92, 50, Math.PI, 2*Math.PI, false, s(INK, 1.5));
-      // Lunettes
-      const gl = { stroke:INK, strokeWidth:2.5, roughness:2, fill:'rgba(250,183,34,.2)', fillStyle:'solid' };
-      rc.rectangle(cx-36, H*.262, 30, 22, gl);
-      rc.rectangle(cx+6,  H*.262, 30, 22, gl);
-      rc.line(cx-6, H*.273, cx+6, H*.273, ln(2));
-      rc.line(cx-66, H*.273, cx-36, H*.273, ln(2));
-      rc.line(cx+36, H*.273, cx+64, H*.273, ln(2));
+      rc.ellipse(cx, H*.29, 90, 92, s(SKIN));
+      // Cheveux longs de côté
+      rc.path(`M ${cx-66} ${H*.18} C ${cx-80} ${H*.30} ${cx-78} ${H*.47} ${cx-62} ${H*.53} Z`, s(HAIR_H, 2));
+      rc.path(`M ${cx+66} ${H*.18} C ${cx+80} ${H*.30} ${cx+78} ${H*.47} ${cx+62} ${H*.53} Z`, s(HAIR_H, 2));
+      // Chignon
+      rc.ellipse(cx, H*.085, 30, 26, s(HAIR_H, 2));
+      // Base cheveux / racine
+      rc.arc(cx, H*.175, 92, 52, Math.PI, 2*Math.PI, false, s(HAIR_H, 1.5));
+      // Sourcils épais
+      rc.line(cx-34, H*.25, cx-10, H*.235, { ...ln(4), roughness:2 });
+      rc.line(cx+10, H*.235, cx+34, H*.25, { ...ln(4), roughness:2 });
       // Yeux
-      rc.ellipse(cx-21, H*.273, 8, 11, s(INK));
-      rc.ellipse(cx+21, H*.273, 8, 11, s(INK));
+      rc.ellipse(cx-19, H*.278, 9, 11, s(INK));
+      rc.ellipse(cx+19, H*.278, 9, 11, s(INK));
       // Nez
-      rc.line(cx-3, H*.33, cx+2, H*.355, ln(1.5));
-      // Sourire
-      rc.arc(cx, H*.38, 30, 18, 0, Math.PI, false, ln(2.5));
+      rc.line(cx-2, H*.33, cx+2, H*.355, ln(1.5));
+      // Barbe
+      rc.path(`M ${cx-58} ${H*.34} C ${cx-62} ${H*.46} ${cx-38} ${H*.55} ${cx} ${H*.57} C ${cx+38} ${H*.55} ${cx+62} ${H*.46} ${cx+58} ${H*.34} C ${cx+48} ${H*.44} ${cx+28} ${H*.50} ${cx} ${H*.51} C ${cx-28} ${H*.50} ${cx-48} ${H*.44} ${cx-58} ${H*.34} Z`, s(HAIR_H, 1.8));
+      // Sourire dans la barbe
+      rc.arc(cx, H*.42, 24, 14, 0, Math.PI, false, ln(2.2));
     }
   }
 
