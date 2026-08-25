@@ -4,7 +4,7 @@
  Généré automatiquement
 ════════════════════════════════════════════════════════ */
 
-const TEAM_ENABLED = true;
+const TEAM_ENABLED = false;
 
 /* Bibliothèque de personnages — photo vide = dessin Rough.js */
 const TEAM_CHARS = [
