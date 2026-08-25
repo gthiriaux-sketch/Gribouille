@@ -59,8 +59,8 @@ Main stage
       { src: "projects/scene-festival/Chateau6.webp", alt: "Chateau6", caption: "" },
       { src: "projects/scene-festival/Chateau7.webp", alt: "Chateau7", caption: "" },
     ],
-    model3d: "projects/scene-festival/model.glb",
-    plans: ["projects/scene-festival/plan.pdf"],
+    model3d: null,
+    plans: [],
   },
 
 /* ════════════════════════════════════════════════════════
@@ -117,8 +117,8 @@ Main stage
       { src: "projects/totems-lumineux-festival/Tour6.webp", alt: "Tour6", caption: "" },
       { src: "projects/totems-lumineux-festival/Tour7.webp", alt: "Tour7", caption: "" },
     ],
-    model3d: "projects/totems-lumineux-festival/model.glb",
-    plans: ["projects/totems-lumineux-festival/plan.pdf"],
+    model3d: null,
+    plans: [],
   },
 
 /* ════════════════════════════════════════════════════════
@@ -174,8 +174,8 @@ Main stage
       { src: "projects/scene-collectif-ecologique/Pirate5.webp", alt: "Pirate5", caption: "" },
       { src: "projects/scene-collectif-ecologique/Pirate6.webp", alt: "Pirate6", caption: "" },
     ],
-    model3d: "projects/scene-collectif-ecologique/model.glb",
-    plans: ["projects/scene-collectif-ecologique/plan.pdf"],
+    model3d: null,
+    plans: [],
   },
 
 /* ════════════════════════════════════════════════════════
@@ -273,8 +273,8 @@ Main stage
       { src: "projects/vectorworks-stage/stage21.webp", alt: "stage21", caption: "" },
       { src: "projects/vectorworks-stage/stage22.webp", alt: "stage22", caption: "" },
     ],
-    model3d: "projects/vectorworks-stage/model.glb",
-    plans: ["projects/vectorworks-stage/plan.pdf"],
+    model3d: null,
+    plans: [],
   },
 /* ════════════════════════════════════════════════════════
 esperanzah! 2026
