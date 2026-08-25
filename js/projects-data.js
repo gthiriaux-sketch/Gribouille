@@ -360,7 +360,6 @@ esperanzah! 2026
       { src: "projects/espe26/espe9.webp", alt: "espe9", caption: "" },
       { src: "projects/espe26/espe10.webp", alt: "espe10", caption: "" },
       { src: "projects/espe26/espe11.webp", alt: "espe11", caption: "" },
-      { src: "projects/espe26/espe12.webp", alt: "espe12", caption: "" },
       
     ],
     model3d: null,
