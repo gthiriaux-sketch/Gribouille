@@ -4,7 +4,7 @@
  Généré automatiquement
 ════════════════════════════════════════════════════════ */
 
-const CLIENTS_ENABLED = true;
+const CLIENTS_ENABLED = false;
 
 const CLIENTS_DEFAULTS = [
   { name: "Couleur Café", url: "https://www.couleurcafe.be/fr/", logo: "img/clients/cc.svg", active: true },
