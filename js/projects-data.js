@@ -95,9 +95,10 @@ Main stage
 
     subtitle: "Des totems qui redéfinissent l'horizon du festival.",
     body: `
-      <p>Un totem lumineux imposant.<p>
+      <p>Un totem lumineux imposant, pensé comme un véritable élément central de la scénographie.</p>
       <br><br>
-      <p>Desigé pour être une partie intégrante de la déco tout en permetant une flexibilité au niveau des lights.</p>
+      <p>Conçu pour s'intégrer pleinement au décor, il apporte du volume et de la présence à l'espace tout en offrant une grande flexibilité pour l'installation et l'orientation des éclairages.</p>
+      <p>Sa structure permet d'accueillir différents types de projecteurs et de faire évoluer facilement la mise en lumière selon l'ambiance recherchée, la programmation ou les besoins techniques de l'événement.</p>
     `,
 
     quote: null,
@@ -147,7 +148,7 @@ Main stage
       { num: "5", label: "Artisans Bénévoles" },
     ],
 
-    client:  "Collectif éco-responsable",
+    client:  "Fictif",
     lieu:    "Belgique",
     date:    "2026",
     duree:   "—",
@@ -155,7 +156,10 @@ Main stage
 
     subtitle: "Construire autrement, sans compromis sur l'impact.",
     body: `
-      <p>Description complète du projet à renseigner.</p>
+      <p>Cette scène a été pensée pour permettre au public de circuler librement tout autour du DJ, tout en préservant un accès technique fonctionnel et dégagé.</p>
+      <br><br>
+      <p>La scénographie privilégie également des matériaux écologiques, recyclables et réutilisables, tels que le bois, le tissu et la corde.</p>
+      <p>Pour le crâne, plusieurs alternatives au polystyrène et à la résine peuvent être envisagées afin de limiter l'utilisation de matériaux peu écologiques, tout en conservant l'impact visuel de la structure.</p>
     `,
 
     quote: null,
