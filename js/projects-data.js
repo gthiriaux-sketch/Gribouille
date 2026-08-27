@@ -87,7 +87,7 @@ Main stage
       { num: "3", label: "Semaines de Fab." },
     ],
 
-    client:  "À renseigner",
+    client:  "Fictif",
     lieu:    "Belgique",
     date:    "2026",
     duree:   "—",
@@ -95,7 +95,9 @@ Main stage
 
     subtitle: "Des totems qui redéfinissent l'horizon du festival.",
     body: `
-      <p>Description complète du projet à renseigner.</p>
+      <p>Un totem lumineux imposant.<p>
+      <br><br>
+      <p>Desigé pour être une partie intégrante de la déco tout en permetant une flexibilité au niveau des lights.</p>
     `,
 
     quote: null,
